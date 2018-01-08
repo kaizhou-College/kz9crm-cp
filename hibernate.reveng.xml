@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="SAL_PLAN" schema="CRM">
+		<primary-key>
+			<key-column name="PLA_ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="PLA_CHC_ID" type="java.lang.Integer"></column>
+	</table>
+	<table name="SAL_CHANCE" schema="CRM">
+		<primary-key>
+			<key-column name="CHC_ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="CHC_RATE" type="java.lang.Integer"></column>
+		<column name="CHC_CREATE_ID" type="java.lang.Integer"></column>
+		<column name="CHC_DUE_ID" type="java.lang.Integer"></column>
+		<column name="CHC_STATUS" type="java.lang.Integer"></column>
+	</table>
+</hibernate-reverse-engineering>

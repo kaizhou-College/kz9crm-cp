@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+   <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+	
+	<struts>
+		<package name="default" abstract="/html" extends="struts-default">
+			<action name="salchance_*" class="salChanceAction" method="{1}">
+				<result name="todispatch_ok">/html/~sale/dispatch.jsp</result>
+			</action>
+			
+		</package>
+	</struts>
+
+	
