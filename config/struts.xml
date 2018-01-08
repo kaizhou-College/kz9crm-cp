@@ -1,0 +1,10 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="pan" namespace="/html" extends="struts-default">
+		<action name="salchance_*" class="salChanceAction" method="{1}">
+			<result name="salchancelist_success">/html/~sale/list.jsp</result>
+		</action>
+	</package>
+</struts>
