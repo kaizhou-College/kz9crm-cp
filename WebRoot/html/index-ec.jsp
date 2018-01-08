@@ -1,9 +1,10 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+
 <%@include file="/comm/comm.jsp" %>
+
 <HTML>
 <HEAD>
 <TITLE>客户关系管理系统</TITLE>
-
 <script language="JavaScript">
 
 function getDHTMLObj(docName, objName) {return eval(docName + theBrowser.DHTMLRange + '.' + objName + theBrowser.DHTMLStyleObj);}
@@ -892,6 +893,7 @@ function initialise() {
 	var level5ID = -1;
 	//level表示最高级，level2子级，level3子子级，Document文件，folder文件夹。
 	//Set the initial state of the folder to "open"
+
 	l2ID = theMenu.addEntry(-1, "Folder", "客户关系管理系统", "${basePath}/mywork.htm", "客户关系管理系统");
 	
 	L01 = theMenu.addChild(l2ID, "Folder", "营销管理", "", "营销管理...");
@@ -921,6 +923,7 @@ function initialise() {
 	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/~basd/dict.html", "数据字典管理...");
 	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "${basePath}/~basd/product.html", "查询产品信息...");
 	L0503 = theMenu.addChild(L05, "Document", "查询库存", "${basePath}/~basd/storage.html", "查询库存...");
+
         
 	theMenu.entry[l2ID].isopen = true;
 }

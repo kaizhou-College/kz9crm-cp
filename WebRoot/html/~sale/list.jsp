@@ -1,7 +1,16 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@include file="/comm/comm.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<%--<script src="${basepath}/html/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#chance_del").click(function(){
+			alter(1);
+		});
+	});
+
+</script>
+--%><html>
 <head>
 <link href="${basePath}/html/css/style.css" rel="stylesheet" type="text/css">
 <script src="${basePath}/html/script/common.js"></script>
@@ -47,13 +56,13 @@
 		<td class="list_data_text"><s:property value="#listsalChance.chcCreateDate"/></td>
 		<td class="list_data_op">
 			<img onclick="to('dispatch.html');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
-			<img onclick="to('edit.html');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
-			<img onclick="del('“销售机会：采购笔记本电脑意向”');" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
+			<img onclick="to('${basePath}html/salchance_toupdate');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
+			<img onclick="del('salChance.chcId=${#listsalChance.chcId}')" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
 			
 		</td>
 	</tr>
 	</s:iterator>
-	<%--<tr>
+	<tr>
 		<th colspan="7" class="pager">
 <div class="pager">
 	共59条记录 每页<input value="10" size="2" />条
@@ -66,7 +75,7 @@
 	<button width="20" onclick="reload();">GO</button>
 </div>
 		</th>
-	--%>
+	
 	<%--<comcp:queryByPage max="${max}" index="${index}" uri="salchance_bypage"></comcp:queryByPage>
 	--%></tr>
 </table>

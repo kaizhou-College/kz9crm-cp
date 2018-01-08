@@ -13,7 +13,9 @@
 	<property name="show_sql">true</property>
 	<property name="format_sql">true</property>
 	<mapping resource="com/cp/entity/SalChance.hbm.xml" />
+
 	<mapping resource="com/cp/entity/SalPlan.hbm.xml" />
+
 
 </session-factory>
 

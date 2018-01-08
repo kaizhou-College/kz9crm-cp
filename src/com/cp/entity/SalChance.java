@@ -1,6 +1,9 @@
-package com.cp.entity;
+﻿package com.cp.entity;
+
 //机会表
 import java.sql.Timestamp;
+
+import java.util.Date;
 
 /**
  * SalChance entity. @author MyEclipse Persistence Tools
@@ -20,12 +23,14 @@ public class SalChance implements java.io.Serializable {
 	private String chcDesc;
 	private Integer chcCreateId;
 	private String chcCreateBy;
-	private Timestamp chcCreateDate;
+
+	private Date chcCreateDate;
 	private Integer chcDueId;
 	private String chcDueTo;
-	private Timestamp chcDueDate;
+	private Date chcDueDate;
 	private Integer chcStatus;
 	private SalPlan salPlan;
+
 	// Constructors
 
 	/** default constructor */
@@ -33,46 +38,30 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
+
 	public SalChance(String chcSource, String chcCustName, String chcTitle,
 			Integer chcRate, String chcDesc, Integer chcCreateId,
 			String chcCreateBy, Timestamp chcCreateDate, Integer chcStatus) {
-		this.chcSource = chcSource;
-		this.chcCustName = chcCustName;
-		this.chcTitle = chcTitle;
-		this.chcRate = chcRate;
-		this.chcDesc = chcDesc;
-		this.chcCreateId = chcCreateId;
-		this.chcCreateBy = chcCreateBy;
-		this.chcCreateDate = chcCreateDate;
-		this.chcStatus = chcStatus;
-	}
+		}
 
-	/** full constructor */
-	public SalChance(String chcSource, String chcCustName, String chcTitle,
-			Integer chcRate, String chcLinkman, String chcTel, String chcDesc,
-			Integer chcCreateId, String chcCreateBy, Timestamp chcCreateDate,
-			Integer chcDueId, String chcDueTo, Timestamp chcDueDate,
+	public SalChance(Integer chcId, String chcSource, String chcCustName,
+			String chcTitle, Integer chcRate, String chcDesc,
+			Integer chcCreateId, String chcCreateBy, Date chcCreateDate,
 			Integer chcStatus) {
+		this.chcId = chcId;
 		this.chcSource = chcSource;
 		this.chcCustName = chcCustName;
 		this.chcTitle = chcTitle;
 		this.chcRate = chcRate;
-		this.chcLinkman = chcLinkman;
-		this.chcTel = chcTel;
 		this.chcDesc = chcDesc;
 		this.chcCreateId = chcCreateId;
 		this.chcCreateBy = chcCreateBy;
 		this.chcCreateDate = chcCreateDate;
-		this.chcDueId = chcDueId;
-		this.chcDueTo = chcDueTo;
-		this.chcDueDate = chcDueDate;
 		this.chcStatus = chcStatus;
 	}
-
-	// Property accessors
 
 	public Integer getChcId() {
-		return this.chcId;
+		return chcId;
 	}
 
 	public void setChcId(Integer chcId) {
@@ -80,7 +69,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcSource() {
-		return this.chcSource;
+		return chcSource;
 	}
 
 	public void setChcSource(String chcSource) {
@@ -88,7 +77,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcCustName() {
-		return this.chcCustName;
+		return chcCustName;
 	}
 
 	public void setChcCustName(String chcCustName) {
@@ -96,7 +85,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcTitle() {
-		return this.chcTitle;
+		return chcTitle;
 	}
 
 	public void setChcTitle(String chcTitle) {
@@ -104,7 +93,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public Integer getChcRate() {
-		return this.chcRate;
+		return chcRate;
 	}
 
 	public void setChcRate(Integer chcRate) {
@@ -112,7 +101,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcLinkman() {
-		return this.chcLinkman;
+		return chcLinkman;
 	}
 
 	public void setChcLinkman(String chcLinkman) {
@@ -120,7 +109,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcTel() {
-		return this.chcTel;
+		return chcTel;
 	}
 
 	public void setChcTel(String chcTel) {
@@ -128,7 +117,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcDesc() {
-		return this.chcDesc;
+		return chcDesc;
 	}
 
 	public void setChcDesc(String chcDesc) {
@@ -136,7 +125,7 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public Integer getChcCreateId() {
-		return this.chcCreateId;
+		return chcCreateId;
 	}
 
 	public void setChcCreateId(Integer chcCreateId) {
@@ -144,23 +133,23 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcCreateBy() {
-		return this.chcCreateBy;
+		return chcCreateBy;
 	}
 
 	public void setChcCreateBy(String chcCreateBy) {
 		this.chcCreateBy = chcCreateBy;
 	}
 
-	public Timestamp getChcCreateDate() {
-		return this.chcCreateDate;
+	public Date getChcCreateDate() {
+		return chcCreateDate;
 	}
 
-	public void setChcCreateDate(Timestamp chcCreateDate) {
+	public void setChcCreateDate(Date chcCreateDate) {
 		this.chcCreateDate = chcCreateDate;
 	}
 
 	public Integer getChcDueId() {
-		return this.chcDueId;
+		return chcDueId;
 	}
 
 	public void setChcDueId(Integer chcDueId) {
@@ -168,34 +157,26 @@ public class SalChance implements java.io.Serializable {
 	}
 
 	public String getChcDueTo() {
-		return this.chcDueTo;
+		return chcDueTo;
 	}
 
 	public void setChcDueTo(String chcDueTo) {
 		this.chcDueTo = chcDueTo;
 	}
 
-	public Timestamp getChcDueDate() {
-		return this.chcDueDate;
+	public Date getChcDueDate() {
+		return chcDueDate;
 	}
 
-	public void setChcDueDate(Timestamp chcDueDate) {
+	public void setChcDueDate(Date chcDueDate) {
 		this.chcDueDate = chcDueDate;
 	}
 
 	public Integer getChcStatus() {
-		return this.chcStatus;
+		return chcStatus;
 	}
 
 	public void setChcStatus(Integer chcStatus) {
 		this.chcStatus = chcStatus;
-	}
-
-	public SalPlan getSalPlan() {
-		return salPlan;
-	}
-
-	public void setSalPlan(SalPlan salPlan) {
-		this.salPlan = salPlan;
 	}
 }

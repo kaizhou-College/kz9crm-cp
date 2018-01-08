@@ -1,7 +1,8 @@
 package com.cp.entity;
-//计划表
-import java.sql.Timestamp;
 
+//计划表
+
+import java.util.Date;
 /**
  * SalPlan entity. @author MyEclipse Persistence Tools
  */
@@ -12,81 +13,48 @@ public class SalPlan implements java.io.Serializable {
 
 	private Integer plaId;
 	//private Integer plaChcId;
-	private Timestamp plaDate;
+	private Date plaDate;
 	private String plaTodo;
 	private String plaResult;
 	private SalChance salChance;
 	// Constructors
-
-	/** default constructor */
-	public SalPlan() {
-	}
-
-	/** minimal constructor */
-	public SalPlan(Integer plaChcId, Timestamp plaDate, String plaTodo) {
-	//	this.plaChcId = plaChcId;
-		this.plaDate = plaDate;
-		this.plaTodo = plaTodo;
-	}
-
-	/** full constructor */
-	public SalPlan(Integer plaChcId, Timestamp plaDate, String plaTodo,
-			String plaResult) {
-		//this.plaChcId = plaChcId;
-		this.plaDate = plaDate;
-		this.plaTodo = plaTodo;
-		this.plaResult = plaResult;
-	}
-
-	// Property accessors
-
 	public Integer getPlaId() {
-		return this.plaId;
+		return plaId;
 	}
-
 	public void setPlaId(Integer plaId) {
 		this.plaId = plaId;
 	}
-/*
-	public Integer getPlaChcId() {
-		return this.plaChcId;
+	public Date getPlaDate() {
+		return plaDate;
 	}
-
-	public void setPlaChcId(Integer plaChcId) {
-		this.plaChcId = plaChcId;
-	}*/
-
-	public Timestamp getPlaDate() {
-		return this.plaDate;
-	}
-
-	public void setPlaDate(Timestamp plaDate) {
+	public void setPlaDate(Date plaDate) {
 		this.plaDate = plaDate;
 	}
-
 	public String getPlaTodo() {
-		return this.plaTodo;
+		return plaTodo;
 	}
-
 	public void setPlaTodo(String plaTodo) {
 		this.plaTodo = plaTodo;
 	}
-
 	public String getPlaResult() {
-		return this.plaResult;
+		return plaResult;
 	}
-
 	public void setPlaResult(String plaResult) {
 		this.plaResult = plaResult;
 	}
-
-	public SalChance getSalChance() {
-		return salChance;
+	public SalPlan() {
+		super();
 	}
-
-	public void setSalChance(SalChance salChance) {
-		this.salChance = salChance;
+	public SalPlan(Integer plaId, Date plaDate, String plaTodo, String plaResult) {
+		super();
+		this.plaId = plaId;
+		this.plaDate = plaDate;
+		this.plaTodo = plaTodo;
+		this.plaResult = plaResult;
 	}
-
-	
+	@Override
+	public String toString() {
+		return "SalPlan [plaDate=" + plaDate + ", plaId=" + plaId
+				+ ", plaResult=" + plaResult + ", plaTodo=" + plaTodo + "]";
+	}
 }
