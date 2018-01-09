@@ -58,14 +58,14 @@
 		<td class="list_data_text"><s:property value="#listsalChance.chcTel"/></td>
 		<td class="list_data_text"><s:property value="#listsalChance.chcCreateDate"/></td>
 		<td class="list_data_op">
+<<<<<<< Updated upstream
 			
 			<img onclick="to('${basePath}html/salchance_toupdate');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
 
 			<img onclick="to('${basePath}html/salchance_todispatch');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
 			
 			
-			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
-
+			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" /
 			
 		</td>
 	</tr>

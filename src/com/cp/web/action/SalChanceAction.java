@@ -1,11 +1,7 @@
-package com.cp.web.action;
+﻿package com.cp.web.action;
 
-
-import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.cp.entity.SalChance;
+import com.cp.entity.SalChanceList;
 import com.cp.service.SalChanceService;
 @Controller
 @Scope("prototype")
@@ -27,31 +24,51 @@ public class SalChanceAction {
 	private String chcDesc;
 	private Integer chcCreateId;
 	private String chcCreateBy;
+
 	private Date chcCreateDate;
 	private Integer chcDueId;
 	private String chcDueTo;
 	private Date chcDueDate;
 	private Integer chcStatus;
+
 	private String chcDueDate2;
 	
-	private SalChance salChance;
 	@Autowired
 	private SalChanceService salChanceService;
 	
 	private List<SalChance> listsalChance;
-	
-	
+	@Autowired
+	private SalChance salChance;
+	//查
+
 	public String bypage(){
 		//System.out.println("劲来了了~~~~~");
 		listsalChance=salChanceService.select(SalChance.class);
 		return"salchancelist_success";
 	}
+
 	
 	
+	//去修改
 	public String toupdate(){
-		System.out.println("成功经阿里郎。。。。");
+	/*	System.out.println("成功经阿里郎。。。。");
+		System.out.println(chcId);*/
+		salChance=salChanceService.queryById(chcId);
+/*		System.out.println("跳转了！！！！！！");
+		System.out.println(salChance);*/
 		return"salchancetoupdate_success";
 	}
+	//实际修改
+	public String update(){
+	/*	System.out.println("修改竟来了。。。。。。");
+		System.out.println(chcDesc);
+		System.out.println(chcDueTo);
+		System.out.println(chcId);
+		System.out.println("华丽丽的分割线-------------------");*/
+			salChanceService.update(chcId,chcDesc,chcDueTo);
+			return "salchanceupdate_success";
+	}
+
 	
 	
 	//去dispatch页面
@@ -113,136 +130,187 @@ public class SalChanceAction {
 		System.out.println("进入了高级查询");
 		return "superselect_ok";
 	}
-	
+
+
 
 	public Integer getChcId() {
 		return chcId;
 	}
-	
+
+
 
 	public void setChcId(Integer chcId) {
 		this.chcId = chcId;
 	}
 
+
+
 	public String getChcSource() {
 		return chcSource;
 	}
+
+
 
 	public void setChcSource(String chcSource) {
 		this.chcSource = chcSource;
 	}
 
+
+
 	public String getChcCustName() {
 		return chcCustName;
 	}
+
+
 
 	public void setChcCustName(String chcCustName) {
 		this.chcCustName = chcCustName;
 	}
 
+
+
 	public String getChcTitle() {
 		return chcTitle;
 	}
+
+
 
 	public void setChcTitle(String chcTitle) {
 		this.chcTitle = chcTitle;
 	}
 
+
+
 	public Integer getChcRate() {
 		return chcRate;
 	}
+
+
 
 	public void setChcRate(Integer chcRate) {
 		this.chcRate = chcRate;
 	}
 
+
+
 	public String getChcLinkman() {
 		return chcLinkman;
 	}
+
+
 
 	public void setChcLinkman(String chcLinkman) {
 		this.chcLinkman = chcLinkman;
 	}
 
+
+
 	public String getChcTel() {
 		return chcTel;
 	}
+
+
 
 	public void setChcTel(String chcTel) {
 		this.chcTel = chcTel;
 	}
 
+
+
 	public String getChcDesc() {
 		return chcDesc;
 	}
+
+
 
 	public void setChcDesc(String chcDesc) {
 		this.chcDesc = chcDesc;
 	}
 
+
+
 	public Integer getChcCreateId() {
 		return chcCreateId;
 	}
+
+
 
 	public void setChcCreateId(Integer chcCreateId) {
 		this.chcCreateId = chcCreateId;
 	}
 
+
+
 	public String getChcCreateBy() {
 		return chcCreateBy;
 	}
+
+
 
 	public void setChcCreateBy(String chcCreateBy) {
 		this.chcCreateBy = chcCreateBy;
 	}
 
+
+
 	public Date getChcCreateDate() {
 		return chcCreateDate;
 	}
+
+
 
 	public void setChcCreateDate(Date chcCreateDate) {
 		this.chcCreateDate = chcCreateDate;
 	}
 
+
+
 	public Integer getChcDueId() {
 		return chcDueId;
 	}
+
+
 
 	public void setChcDueId(Integer chcDueId) {
 		this.chcDueId = chcDueId;
 	}
 
+
+
 	public String getChcDueTo() {
 		return chcDueTo;
 	}
+
+
 
 	public void setChcDueTo(String chcDueTo) {
 		this.chcDueTo = chcDueTo;
 	}
 
+
+
 	public Date getChcDueDate() {
 		return chcDueDate;
 	}
+
+
 
 	public void setChcDueDate(Date chcDueDate) {
 		this.chcDueDate = chcDueDate;
 	}
 
+
+
 	public Integer getChcStatus() {
 		return chcStatus;
 	}
+
+
 
 	public void setChcStatus(Integer chcStatus) {
 		this.chcStatus = chcStatus;
 	}
 
-	public SalChance getSalChance() {
-		return salChance;
-	}
-
-	public void setSalChance(SalChance salChance) {
-		this.salChance = salChance;
-	}
 
 
 	public String getChcDueDate2() {
@@ -250,11 +318,10 @@ public class SalChanceAction {
 	}
 
 
+
 	public void setChcDueDate2(String chcDueDate2) {
 		this.chcDueDate2 = chcDueDate2;
 	}
-
-
 
 
 
@@ -264,13 +331,7 @@ public class SalChanceAction {
 
 
 
-
-
 	public void setListsalChance(List<SalChance> listsalChance) {
 		this.listsalChance = listsalChance;
 	}
-
-
-
-	
 }

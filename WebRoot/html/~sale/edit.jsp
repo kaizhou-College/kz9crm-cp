@@ -1,53 +1,57 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@include file="/comm/comm.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>jb-aptech毕业设计项目</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<link href="../css/style.css" rel="stylesheet" type="text/css">
-<script src="../script/common.js"></script>
+<link href="${basePath}/html/css/style.css" rel="stylesheet" type="text/css">
+<script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
+<form action="salchance_update" method="post">
+
 
 <div class="page_title">销售机会管理&nbsp; &gt; 编辑销售机会</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
 	<button class="common_button" onclick="back();">返回</button>
-	<button class="common_button" onclick="save('list.html');">保存</button>  
+	<button class="common_button" type="submit">保存</button>  
 </div>
 <table class="query_form_table">
+<s:iterator var="salChance" value="salChance">
 	<tr>
 		<th>编号</th>
-		<td><input readonly value="1" /></td>
+		<td>
+		<input type="hidden" name="chcId"  value="<s:property value="#salChance.chcId"/>">
+		<s:property value="#salChance.chcId"/></td>
 		<th>机会来源</th>
 		<td>
-			<input name="T4" size="20" /></td>
+			<s:property value="#salChance.chcSource"/></td>
 	</tr>
 	<tr>
 		<th>客户名称</th>
-		<td><input value="睿智电脑" /><span class="red_star">*</span></td>
+		<td><s:property value="#salChance.chcCustName" /><span class="red_star">*</span></td>
 		<th>成功机率（%）</th>
-		<td><input value="70" /><span class="red_star">*</span></td>
+		<td><s:property value="#salChance.chcRate"/><span class="red_star">*</span></td>
 	</tr>	
 	<tr>
 		<th>概要</th>
-		<td colspan="3"><input value="采购笔记本电脑意向" name="T0" size="52" /><span class="red_star">*</span></td>
+		<td colspan="3"><s:property value="#salChance.chcTitle"/><span class="red_star">*</span></td>
 	</tr>
 	<tr>
 		<th>联系人</th>
-		<td><input name="T21" value="刘先生" size="20" /></td>
+		<td><s:property value="#salChance.chcLinkman" /></td>
 		<th>联系人电话</th>
-		<td><input name="T5" value="13729239239" size="20" /></td>
+		<td><s:property value="#salChance.chcTel"/></td>
 	</tr>
 	<tr>
 		<th>机会描述</th>
-		<td colspan="3"><textarea rows="6" cols="50" name="S1">...</textarea><span class="red_star">*</span></td>
+		<td colspan="3"><textarea rows="6" cols="50" name="chcDesc"><s:property value="#salChance.chcDesc" /></textarea><span class="red_star">*</span></td>
 	</tr>
 	<tr>
 		<th>创建人</th>
-		<td><input name="T19" value="刘颖" readonly size="20" /><span class="red_star">*</span></td>
+		<td><s:property value="#salChance.chcCreateId" /><span class="red_star">*</span></td>
 		<th>创建时间</th>
-		<td><input id="t1" name="T15" value="2007-12-6 16:09:8" readonly size="20" /><span class="red_star">*</span></td>
+		<td><s:property value="#salChance.chcCreateDate"/><span class="red_star">*</span></td>
 	</tr>
 </table>
 <br />
@@ -55,22 +59,14 @@
 	<tr>
 		<th>指派给</th>
 		<td>
-			<select name="D1">
-				<option>请选择...</option>
-				<option>小明</option>
-				<option>旺财</option>
-				<option>球球</option>
-				<option>孙小美</option>
-				<option>周洁轮</option>
-			</select> <span class="red_star">*</span></td>
+			<s:select list="#{'小明':'小明','旺财':'旺财','球球':'球球','孙小美':'孙小美','周洁轮':'周洁轮'}" name="chcDueTo" value="#salChance.chcDueTo"></s:select>
+				<span class="red_star">*</span>
+		</td>
 		<th>指派时间</th>
-		<td>
-			<input id="t2" name="T20" readonly size="20" /><span class="red_star">*</span></td>
+		<td><s:property value="#salChance.chcDueDate"/><span class="red_star">*</span></td>
 	</tr>
 </table>
-<script>
-	setCurTime('t1');
-	setCurTime('t2');
-</script>
+		</s:iterator>
+		</form>
 </body>
 </html>
