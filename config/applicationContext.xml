@@ -47,6 +47,7 @@
 
 			<tx:method name="select*" propagation="REQUIRED"/>
 			<tx:method name="todispatch*" propagation="REQUIRED"/>
+			<tx:method name="dispatch*" propagation="REQUIRED"/>
 			<tx:method name="save*" propagation="REQUIRED"/>
 			<tx:method name="update*" propagation="REQUIRED"/>
 			<tx:method name="delete*" propagation="REQUIRED"/>

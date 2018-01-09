@@ -1,4 +1,4 @@
-function reload(){
+﻿function reload(){
 	window.location.reload();
 }
 function help(msg){
@@ -16,14 +16,16 @@ function save(url){
 	to(url);
 }
 function add(url){
-	alert('新建成功！');
+
+	//alert('新建成功！');
 	to(url);
 }
-function del(id){
-	/*if (window.confirm("确认删除"+msg+"？")){
+function del(msg){
+	if (window.confirm("确认删除"+msg+"？")){
 		reload();
-	}*/
-	window.location.href="salchance_delete";
+		window.location.href="${basePath}html/salchance_delete?chcId="+2;
+	}
+
 }
 function setCurTime(oid){
 	var now=new Date();

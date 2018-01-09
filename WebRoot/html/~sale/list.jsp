@@ -1,4 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <%@include file="/comm/comm.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%--<script src="${basepath}/html/js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -16,13 +17,14 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="${basePath}html/salchance_superselect">
 <div class="page_title">销售机会管理</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="to('add.html');">新建</button>  
-	<button class="common_button" onclick="reload();">查询</button> 
+	<button class="common_button" onclick="to('add.jsp');">新建</button>  
+	<button class="common_button" type="submit">查询</button> 
 	</div>
+	
 <table class="query_form_table">
 	<tr>
 		<th>客户名称</th>
@@ -35,6 +37,7 @@
 		</td>
 	</tr>
 	</table>
+	</form>
 <br />
 <table class="data_list_table">
 	<tr>
@@ -55,9 +58,14 @@
 		<td class="list_data_text"><s:property value="#listsalChance.chcTel"/></td>
 		<td class="list_data_text"><s:property value="#listsalChance.chcCreateDate"/></td>
 		<td class="list_data_op">
-			<img onclick="to('dispatch.html');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
+			
 			<img onclick="to('${basePath}html/salchance_toupdate');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
-			<img onclick="del('salChance.chcId=${#listsalChance.chcId}')" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
+
+			<img onclick="to('${basePath}html/salchance_todispatch');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
+			
+			
+			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
+
 			
 		</td>
 	</tr>
@@ -79,5 +87,6 @@
 	<%--<comcp:queryByPage max="${max}" index="${index}" uri="salchance_bypage"></comcp:queryByPage>
 	--%></tr>
 </table>
+
 </body>
 </html>

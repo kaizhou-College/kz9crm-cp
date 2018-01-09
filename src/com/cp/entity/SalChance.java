@@ -9,6 +9,7 @@ import java.util.Date;
  * SalChance entity. @author MyEclipse Persistence Tools
  */
 
+
 public class SalChance implements java.io.Serializable {
 
 	// Fields
@@ -58,6 +59,18 @@ public class SalChance implements java.io.Serializable {
 		this.chcCreateBy = chcCreateBy;
 		this.chcCreateDate = chcCreateDate;
 		this.chcStatus = chcStatus;
+	}
+
+	@Override
+	public String toString() {
+		return "SalChance [chcCreateBy=" + chcCreateBy + ", chcCreateDate="
+				+ chcCreateDate + ", chcCreateId=" + chcCreateId
+				+ ", chcCustName=" + chcCustName + ", chcDesc=" + chcDesc
+				+ ", chcDueDate=" + chcDueDate + ", chcDueId=" + chcDueId
+				+ ", chcDueTo=" + chcDueTo + ", chcId=" + chcId
+				+ ", chcLinkman=" + chcLinkman + ", chcRate=" + chcRate
+				+ ", chcSource=" + chcSource + ", chcStatus=" + chcStatus
+				+ ", chcTel=" + chcTel + ", chcTitle=" + chcTitle + "]";
 	}
 
 	public Integer getChcId() {
