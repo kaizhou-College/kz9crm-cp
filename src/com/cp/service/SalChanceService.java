@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.cp.entity.SalChance;
 
-
 public interface SalChanceService {
 	public SalChance todispatch(int chcId);
 
@@ -21,5 +20,6 @@ public interface SalChanceService {
 	SalChance queryById(int chcId);
 	//实际修改
 	void update(int chcId,String chcDesc,String chcDueTo);
+
 
 }

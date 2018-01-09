@@ -8,26 +8,12 @@ import org.springframework.stereotype.Service;
 
 import com.cp.dao.SalChanceDao;
 import com.cp.entity.SalChance;
-
 import com.cp.service.SalChanceService;
 
 @Service
 public class SalChanceServiceImpl  implements SalChanceService{
 	@Autowired
 	private SalChanceDao salChanceDao;
-
-	
-	public SalChance todispatch(int chcId) {
-		
-		System.out.println("进入了BizImpl");
-		System.out.println(chcId);
-		
-		SalChance salChance =(SalChance) salChanceDao.todispatch(chcId);
-		
-		return salChance;
-	}
-	
-	
 
 	public void dispatch(int chcId,int chcCreateId, Date chcDueDate) {
 		// TODO Auto-generated method stub
@@ -53,12 +39,10 @@ public class SalChanceServiceImpl  implements SalChanceService{
 		
 	}
 	//查
-
 	public List select(Class clazz) {
 		List list=salChanceDao.select(clazz);
 		return list;
 	}
-
 	//指派
 	public SalChance todispatch(int chcId) {
 		//System.out.println("进入了BizImpl");
@@ -80,6 +64,5 @@ public class SalChanceServiceImpl  implements SalChanceService{
 	public void setSalChanceDao(SalChanceDao salChanceDao) {
 		this.salChanceDao = salChanceDao;
 	}
-
 
 }
