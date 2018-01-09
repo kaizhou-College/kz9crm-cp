@@ -41,6 +41,8 @@
 	</bean>
 		<!--为dao注入sessionFactory -->
 	<bean id="salChanceDao" class="com.cp.dao.impl.SalChanceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 		<!--aspect自动生成代理  -->
 	<tx:advice id="comcpadvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -61,5 +63,6 @@
 		<aop:pointcut expression="execution(* com.cp.service.impl.*.*(..))" id="comcppoint"/>
 		<!-- 切面 -->
 		<aop:advisor advice-ref="comcpadvice" pointcut-ref="comcppoint"/>
-	</aop:config>			
+	</aop:config>	
+			
 </beans>
