@@ -14,7 +14,7 @@
 <!-- 指定Spring框架的配置文件所在的位置 -->
 <context-param>
 	<param-name>contextConfigLocation</param-name>
-	<param-value>classpath:applicationContext.xml</param-value>
+	<param-value>classpath:applicationContext*</param-value>
 </context-param>
 
  

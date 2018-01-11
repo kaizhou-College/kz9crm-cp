@@ -1,5 +1,5 @@
-﻿function reload(){
-	window.location.reload();
+function reload1(){
+	alert(1);
 }
 function help(msg){
 	alert('欢迎使用'+msg);

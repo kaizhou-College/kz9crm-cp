@@ -42,6 +42,15 @@
 	<bean id="salChanceDao" class="com.cp.dao.impl.SalChanceDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean id="cstLostDao" class="com.cp.dao.impl.CstLostDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="reptDao" class="com.cp.dao.impl.ReptDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 		<!--aspect自动生成代理  -->
 	<tx:advice id="comcpadvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -53,16 +62,20 @@
 			<tx:method name="update*" propagation="REQUIRED"/>
 			<tx:method name="delete*" propagation="REQUIRED"/>
 			<tx:method name="queryById*" propagation="REQUIRED"/>
+			<tx:method name="byPage*" propagation="REQUIRED"/>
+			<tx:method name="count*" propagation="REQUIRED"/>
+			<tx:method name="work*" propagation="REQUIRED"/>
+			<tx:method name="add*" propagation="REQUIRED"/>
+			<tx:method name="serSelect*" propagation="REQUIRED"/>
+			<tx:method name="lostSelect*" propagation="REQUIRED"/>
+			<tx:method name="conteSelect*" propagation="REQUIRED"/>
 			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
-		
-
 	<aop:config>
 		<!--切点 -->
 		<aop:pointcut expression="execution(* com.cp.service.impl.*.*(..))" id="comcppoint"/>
 		<!-- 切面 -->
 		<aop:advisor advice-ref="comcpadvice" pointcut-ref="comcppoint"/>
-	</aop:config>	
-			
+	</aop:config>
 </beans>

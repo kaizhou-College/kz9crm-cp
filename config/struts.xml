@@ -1,30 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
    <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
-	
-	
-	<struts>
+<struts>
+		<constant name="struts.ui.theme" value="simple"></constant>
 		<package name="default" abstract="/html" extends="struts-default">
+			<!-- 营销管理 -->
 			<action name="salchance_*" class="salChanceAction" method="{1}">
 				<result name="todispatch_ok">/html/~sale/dispatch.jsp</result>
 				<result name="dispatch_ok">/html/~sale/list.jsp</result>
 				<result name="delete_ok">/html/~sale/list.jsp</result>
 				<result name="save_ok">/html/~sale/list.jsp</result>
 				<result name="superselect_ok">/html/~sale/list.jsp</result>
-				
-				
-				
-			<result name="salchancelist_success">/html/~sale/list.jsp</result>
-			<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
-			<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
-			<result name="salchanceupdate_success" type="redirectAction">salchance_bypage</result>
-			<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
-			
-			
-			
+				<result name="salchancelist_success">/html/~sale/list.jsp</result>
+				<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
+				<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
+				<result name="salchanceupdate_success" type="redirectAction">salchance_bypage</result>
+				<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
 			</action>
 			
+			<!-- 客户管理 -->
+			<!-- 客户流失管理 -->
+			<action name="cstLost_*" class="cstLostAction" method="{1}">
+				<result name="byPage_success">/html/~cust/lost/list.jsp</result>
+				<result name="supersel_success">/html/~cust/lost/listDim.jsp</result>
+			</action>
+			
+			<!-- 统计报表 -->
+			<action name="rept_*" class="reptAction" method="{1}">
+				<result name="rept_conteSel">/html/~rept/contr.jsp</result>
+				<result name="rept_consSel">/html/~rept/cons.jsp</result>
+				<result name="rept_serSel">/html/~rept/ser.jsp</result>
+				<result name="rept_lostSel">/html/~rept/lost.jsp</result>
+			</action>
 		</package>
-	</struts>
+</struts>

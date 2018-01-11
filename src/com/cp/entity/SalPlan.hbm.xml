@@ -22,5 +22,6 @@
             <column name="PLA_RESULT" />
         </property>
         <!--<many-to-one name="salChance" class="com.cp.entity.SalChance"></many-to-one>
-    --></class>
+    -->
+    </class>
 </hibernate-mapping>

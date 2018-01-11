@@ -58,7 +58,6 @@
 		<td class="list_data_text"><s:property value="#listsalChance.chcTel"/></td>
 		<td class="list_data_text"><s:property value="#listsalChance.chcCreateDate"/></td>
 		<td class="list_data_op">
-<<<<<<< Updated upstream
 			
 			<img onclick="to('${basePath}html/salchance_toupdate');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
 

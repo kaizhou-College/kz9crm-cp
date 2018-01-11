@@ -12,7 +12,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.cp.dao.SalChanceDao;
 import com.cp.entity.SalChance;
-import com.cp.entity.SalChanceList;
 
 
 public class SalChanceDaoImpl extends HibernateDaoSupport implements SalChanceDao{

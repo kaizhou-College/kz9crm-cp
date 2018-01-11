@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.cp.entity.SalChance;
-import com.cp.entity.SalChanceList;
 import com.cp.service.SalChanceService;
 @Controller
 @Scope("prototype")
