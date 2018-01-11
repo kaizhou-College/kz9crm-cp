@@ -44,13 +44,13 @@ public class SalChanceAction {
 	public String bypage(){
 		//System.out.println("劲来了了~~~~~");
 		listsalChance=salChanceService.select(SalChance.class);
-		return"salchancelist_success";
+		return "salchancelist_success";
 	}
 	
 	
 	public String toupdate(){
 		System.out.println("成功经阿里郎。。。。");
-		return"salchancetoupdate_success";
+		return "salchancetoupdate_success";
 	}
 	
 	

@@ -904,27 +904,27 @@ function initialise() {
 
 	
 	L02 = theMenu.addChild(l2ID, "Folder", "客户管理", "", "客户管理...");
-	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "${basePath}/~cust/cust/list.html", "客户信息管理...");
-	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "${basePath}/~cust/lost/list.html", "客户流失管理...");	
+	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "cstCustomer_select", "客户信息管理...");
+	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "${basePath}/html/~cust/lost/list.html", "客户流失管理...");	
 
 	L03 = theMenu.addChild(l2ID, "Folder", "服务管理", "", "客户服务管理...");
-	L0301 = theMenu.addChild(L03, "Document", "服务创建", "${basePath}/~cust/service/add.html", "服务创建...");
-	L0302 = theMenu.addChild(L03, "Document", "服务分配", "${basePath}/~cust/service/dispatch.html", "服务分配...");
-	L0303 = theMenu.addChild(L03, "Document", "服务处理", "${basePath}/~cust/service/deal.html", "服务处理...");
-	L0304 = theMenu.addChild(L03, "Document", "服务反馈", "${basePath}/~cust/service/feedback.html", "服务反馈...");
-	L0305 = theMenu.addChild(L03, "Document", "服务归档", "${basePath}/~cust/service/arch.html", "服务归档...");
+	L0301 = theMenu.addChild(L03, "Document", "服务创建", "${basePath}/html/~cust/service/add.jsp", "服务创建...");
+	L0302 = theMenu.addChild(L03, "Document", "服务分配", "cstService_todispatch", "服务分配...");
+	L0303 = theMenu.addChild(L03, "Document", "服务处理", "cstService_todeal", "服务处理...");
+	L0304 = theMenu.addChild(L03, "Document", "服务反馈", "cstService_tofeedback", "服务反馈...");
+	L0305 = theMenu.addChild(L03, "Document", "服务归档", "cstService_toarch", "服务归档...");
 	
 	
 	L04 = theMenu.addChild(l2ID, "Folder", "统计报表", "", "统计报表...");
-	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "${basePath}/~rept/contr.html", "客户贡献分析...");
-	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "${basePath}/~rept/cons.html", "客户构成分析...");
-	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "${basePath}/~rept/ser.html", "客户服务分析...");
-	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "${basePath}/~rept/lost.html", "客户流失分析...");
+	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "${basePath}/html/~rept/contr.html", "客户贡献分析...");
+	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "${basePath}/html/~rept/cons.html", "客户构成分析...");
+	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "${basePath}/html/~rept/ser.html", "客户服务分析...");
+	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "${basePath}/html/~rept/lost.html", "客户流失分析...");
 	
 	L05 = theMenu.addChild(l2ID, "Folder", "基础数据", "", "基础数据...");
-	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/~basd/dict.html", "数据字典管理...");
-	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "${basePath}/~basd/product.html", "查询产品信息...");
-	L0503 = theMenu.addChild(L05, "Document", "查询库存", "${basePath}/~basd/storage.html", "查询库存...");
+	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/html/~basd/dict.html", "数据字典管理...");
+	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "${basePath}/html/~basd/product.html", "查询产品信息...");
+	L0503 = theMenu.addChild(L05, "Document", "查询库存", "${basePath}/html/~basd/storage.html", "查询库存...");
 
         
 	theMenu.entry[l2ID].isopen = true;

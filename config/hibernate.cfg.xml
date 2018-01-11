@@ -15,6 +15,11 @@
 	<mapping resource="com/cp/entity/SalChance.hbm.xml" />
 
 	<mapping resource="com/cp/entity/SalPlan.hbm.xml" />
+	<mapping resource="com/cp/entity/CstCustomer.hbm.xml" />
+	<mapping resource="com/cp/entity/CstLinkman.hbm.xml" />
+	<mapping resource="com/cp/entity/CstActivity.hbm.xml" />
+	<mapping resource="com/cp/entity/Orders.hbm.xml" />
+	<mapping resource="com/cp/entity/CstService.hbm.xml" />
 
 
 </session-factory>

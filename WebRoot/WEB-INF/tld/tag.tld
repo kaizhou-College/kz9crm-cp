@@ -7,22 +7,32 @@
  <uri>http://crm/comcp</uri>
  <tag>
  	<name>queryByPage</name>
- 	<tag-class>com.cp.tld.queryByPage</tag-class>
- 	<body-content>scriptless</body-content>
- 	<attribute>
- 		<name>index</name>
- 		<required>true</required>
- 		<rtexprvalue>true</rtexprvalue>
- 	</attribute>
- 	<attribute>
- 		<name>max</name>
- 		<required>true</required>
- 		<rtexprvalue>true</rtexprvalue>
- 	</attribute>
- 	<attribute>
- 		<name>uri</name>
- 		<required>true</required>
- 		<rtexprvalue>true</rtexprvalue>
- 	</attribute>
+ 	<tag-class>com.cp.tld.TagFY</tag-class>
+	<body-content>scriptless</body-content>
+	 	<attribute>
+	 		<name>pageIndex</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>pageSize</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>pageUrl</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>pageMax</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>count</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
  </tag>
 </taglib>

@@ -17,4 +17,35 @@
 		<column name="CHC_DUE_ID" type="java.lang.Integer"></column>
 		<column name="CHC_STATUS" type="java.lang.Integer"></column>
 	</table>
+	<table name="CST_CUSTOMER" schema="CRM">
+		<column name="CUST_LEVEL" type="java.lang.Integer"></column>
+		<column name="CUST_SATISFY" type="java.lang.Integer"></column>
+		<column name="CUST_CREDIT" type="java.lang.Integer"></column>
+		<column name="CUST_BANKROLL" type="java.lang.Integer"></column>
+		<column name="CUST_TURNOVER" type="java.lang.Integer"></column>
+	</table>
+	<table name="CST_LINKMAN" schema="CRM">
+		<primary-key>
+			<key-column name="LKM_ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="CST_ACTIVITY" schema="CRM">
+		<primary-key>
+			<key-column name="ATV_ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="ORDERS" schema="CRM">
+		<primary-key>
+			<key-column name="ODR_ID" type="java.lang.Integer" />
+		</primary-key>
+	</table>
+	<table name="CST_SERVICE" schema="CRM">
+		<primary-key>
+			<key-column name="SVR_ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="SVR_CREATE_ID" type="java.lang.Integer"></column>
+		<column name="SVR_DUE_ID" type="java.lang.Integer"></column>
+		<column name="SVR_SATISFY" type="java.lang.Integer"></column>
+		<column name="SVR_DEAL_DATE" type="java.util.Date"></column>
+	</table>
 </hibernate-reverse-engineering>

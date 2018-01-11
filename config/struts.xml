@@ -1,10 +1,8 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
    <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
-	
 	
 	<struts>
 		<package name="default" abstract="/html" extends="struts-default">
@@ -15,16 +13,58 @@
 				<result name="save_ok">/html/~sale/list.jsp</result>
 				<result name="superselect_ok">/html/~sale/list.jsp</result>
 				
-				
-				
 			<result name="salchancelist_success">/html/~sale/list.jsp</result>
 			<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
 			<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
 			<result name="salchanceupdate_success" type="redirectAction">salchance_bypage</result>
 			<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
 			
+			</action>
+			
+			<action name="cstCustomer_*" class="cstCustomerAction" method="{1}">
+				<result name="select_ok">/html/~cust/cust/list.jsp</result>
+				<result name="toupdate_ok">/html/~cust/cust/edit.jsp</result>
+				 <result name="update_ok" type="redirectAction">cstCustomer_select</result>
+				 <result name="delete_ok" type="redirectAction">cstCustomer_select</result>
+			</action>
+			
+			<action name="cstLinkman_*" class="cstLinkmanAction" method="{1}">
+				<result name="select_ok">/html/~cust/cust/linkman.jsp</result>
+				<result name="delete_ok" type="redirectAction">cstCustomer_select</result>
+				<result name="toupdate_ok">/html/~cust/cust/linkman_edit.jsp</result>
+				<result name="update_ok" type="redirectAction">cstCustomer_select</result>
+				<result name="toadd_ok">/html/~cust/cust/linkman_add.jsp</result>
+				<result name="add_ok" type="redirectAction">cstCustomer_select</result>
+			</action>
 			
 			
+			<action name="cstActivity_*" class="cstActivityAction" method="{1}">
+				<result name="select_ok">/html/~cust/cust/activities.jsp</result>
+				<result name="delete_ok" type="redirectAction">cstCustomer_select</result>
+				<result name="toupdate_ok" >/html/~cust/cust/activities_edit.jsp</result>
+				<result name="update_ok" type="redirectAction">cstCustomer_select</result>
+				<result name="toadd_ok">/html/~cust/cust/activities_add.jsp</result>
+				<result name="add_ok" type="redirectAction">cstCustomer_select</result>
+			</action>
+			
+			<action name="orders_*" class="ordersAction" method="{1}">
+				<result name="select_ok">/html/~cust/cust/orders.jsp</result>
+			</action>
+			
+			
+			<action name="cstService_*" class="cstServiceAction" method="{1}">
+				<result name="add_ok">index-ec.jsp</result>
+				<result name="todispatch_ok">/html/~cust/service/dispatch.jsp</result>
+				<result name="updatesvrDueId_ok" type="redirectAction">cstService_todispatch</result>
+				<result name="delete_ok" type="redirectAction">cstService_todispatch</result>
+				<result name="todeal_ok" >/html/~cust/service/deal.jsp</result>
+				<result name="todetail_ok">/html/~cust/service/deal_detail.jsp</result>
+				<result name="detailupdate_ok" type="redirectAction">cstService_todispatch</result>
+				<result name="feedback_ok">/html/~cust/service/feedback.jsp</result>
+				<result name="todetail2_ok">/html/~cust/service/feedback_detail.jsp</result>
+				<result name="detailupdate2_ok" type="redirectAction">cstService_todispatch</result>
+				<result name="toarch_ok">/html/~cust/service/arch.jsp</result>
+				<result name="todetail3_ok">/html/~cust/service/detail.jsp</result>
 			</action>
 			
 		</package>

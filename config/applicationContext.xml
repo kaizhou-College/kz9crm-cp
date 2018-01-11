@@ -39,10 +39,32 @@
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
 		<!--为dao注入sessionFactory -->
 	<bean id="salChanceDao" class="com.cp.dao.impl.SalChanceDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	<bean id="cstCustomerDao" class="com.cp.dao.impl.CstCustomerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="cstLinkmanDao" class="com.cp.dao.impl.CstLinkmanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="cstActivityDao" class="com.cp.dao.impl.CstActivityDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="ordersDao" class="com.cp.dao.impl.OrdersDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="cstServiceDao" class="com.cp.dao.impl.CstServiceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 		<!--aspect自动生成代理  -->
 	<tx:advice id="comcpadvice" transaction-manager="transactionManager">
 		<tx:attributes>
@@ -51,8 +73,12 @@
 			<tx:method name="todispatch*" propagation="REQUIRED"/>
 			<tx:method name="dispatch*" propagation="REQUIRED"/>
 			<tx:method name="save*" propagation="REQUIRED"/>
+			<tx:method name="add*" propagation="REQUIRED"/>
 			<tx:method name="update*" propagation="REQUIRED"/>
 			<tx:method name="delete*" propagation="REQUIRED"/>
+			<tx:method name="updatesvrDueId*" propagation="REQUIRED"/>
+			<tx:method name="detailupdate*" propagation="REQUIRED"/>
+			<tx:method name="detailupdate2*" propagation="REQUIRED"/>
 			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>
