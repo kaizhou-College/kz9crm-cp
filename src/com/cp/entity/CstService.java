@@ -1,12 +1,16 @@
-package com.cp.entity;
+﻿package com.cp.entity;
+
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Date;
 
+
 /**
  * CstService entity. @author MyEclipse Persistence Tools
  */
+
+//客户服务表
 
 public class CstService implements java.io.Serializable {
 
@@ -20,6 +24,7 @@ public class CstService implements java.io.Serializable {
 	private String svrRequest;
 	private Integer svrCreateId;
 	private String svrCreateBy;
+
 	private Date svrCreateDate;
 	private Integer svrDueId;
 	private String svrDueTo;
@@ -38,15 +43,18 @@ public class CstService implements java.io.Serializable {
 	
 	// Constructors
 
+
 	/** default constructor */
 	public CstService() {
 	}
+
 
 	/** minimal constructor */
 	public CstService(Integer svrId, String svrType, String svrTitle,
 			String svrCustName, String svrStatus, String svrRequest,
 			Integer svrCreateId, String svrCreateBy, Date svrCreateDate) {
 		this.svrId = svrId;
+
 		this.svrType = svrType;
 		this.svrTitle = svrTitle;
 		this.svrCustName = svrCustName;
@@ -58,6 +66,7 @@ public class CstService implements java.io.Serializable {
 	}
 
 	/** full constructor */
+
 	public CstService(Integer svrId, String svrType, String svrTitle,
 			 String svrCustName, String svrStatus,
 			String svrRequest, Integer svrCreateId, String svrCreateBy,
@@ -68,6 +77,7 @@ public class CstService implements java.io.Serializable {
 		this.svrId = svrId;
 		this.svrType = svrType;
 		this.svrTitle = svrTitle;
+
 		this.svrCustName = svrCustName;
 		this.svrStatus = svrStatus;
 		this.svrRequest = svrRequest;
@@ -85,9 +95,7 @@ public class CstService implements java.io.Serializable {
 		this.svrSatisfy = svrSatisfy;
 	}
 
-	
-	
-	
+
 	
 	// Property accessors
 
@@ -113,6 +121,7 @@ public class CstService implements java.io.Serializable {
 		this.cstCustomer = cstCustomer;
 	}
 
+
 	public Integer getSvrId() {
 		return this.svrId;
 	}
@@ -137,6 +146,7 @@ public class CstService implements java.io.Serializable {
 		this.svrTitle = svrTitle;
 	}
 
+
 //	public String getSvrCustNo() {
 //		return this.svrCustNo;
 //	}
@@ -144,6 +154,7 @@ public class CstService implements java.io.Serializable {
 //	public void setSvrCustNo(String svrCustNo) {
 //		this.svrCustNo = svrCustNo;
 //	}
+
 
 	public String getSvrCustName() {
 		return this.svrCustName;
@@ -190,6 +201,7 @@ public class CstService implements java.io.Serializable {
 	}
 
 	public void setSvrCreateDate(Date svrCreateDate) {
+
 		this.svrCreateDate = svrCreateDate;
 	}
 
@@ -214,6 +226,7 @@ public class CstService implements java.io.Serializable {
 	}
 
 	public void setSvrDueDate(Date svrDueDate) {
+
 		this.svrDueDate = svrDueDate;
 	}
 
@@ -241,11 +254,13 @@ public class CstService implements java.io.Serializable {
 		this.svrDealBy = svrDealBy;
 	}
 
+
 	public Date getSvrDealDate() {
 		return this.svrDealDate;
 	}
 
 	public void setSvrDealDate(Date svrDealDate) {
+
 		this.svrDealDate = svrDealDate;
 	}
 
@@ -262,6 +277,7 @@ public class CstService implements java.io.Serializable {
 	}
 
 	public void setSvrSatisfy(Integer svrSatisfy) {
+
 		this.svrSatisfy = svrSatisfy;
 	}
 

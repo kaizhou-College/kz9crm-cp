@@ -192,4 +192,12 @@ public class SalChance implements java.io.Serializable {
 	public void setChcStatus(Integer chcStatus) {
 		this.chcStatus = chcStatus;
 	}
+
+	public SalPlan getSalPlan() {
+		return salPlan;
+	}
+
+	public void setSalPlan(SalPlan salPlan) {
+		this.salPlan = salPlan;
+	}
 }

@@ -1,13 +1,13 @@
-package com.cp.entity;
+﻿package com.cp.entity;
 
-import java.math.BigDecimal;
+
 import java.util.HashSet;
 import java.util.Set;
-
 
 /**
  * CstCustomer entity. @author MyEclipse Persistence Tools
  */
+//客户信息表
 
 public class CstCustomer implements java.io.Serializable {
 
@@ -36,6 +36,7 @@ public class CstCustomer implements java.io.Serializable {
 	private String custLocalTaxNo;
 	private String custNationalTaxNo;
 	private String custStatus;
+
 	
 	private Set<CstLinkman> cstLinkman=new HashSet<CstLinkman>();
 	
@@ -43,6 +44,10 @@ public class CstCustomer implements java.io.Serializable {
 	
 	private Set<CstService> cstService=new HashSet<CstService>();
 	
+
+	private Set<CstLost> cstLost =new HashSet<CstLost>();
+	private Set<Orders> orders=new HashSet<Orders>();
+
 	// Constructors
 
 	/** default constructor */
@@ -50,6 +55,7 @@ public class CstCustomer implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
+
 	public CstCustomer(String custNo, String custName) {
 		this.custNo = custNo;
 		this.custName = custName;
@@ -88,16 +94,6 @@ public class CstCustomer implements java.io.Serializable {
 		this.custNationalTaxNo = custNationalTaxNo;
 		this.custStatus = custStatus;
 	}
-	
-	
-
-	// Property accessors
-
-
-
-	public String getCustNo() {
-		return this.custNo;
-	}
 
 	@Override
 	public String toString() {
@@ -116,8 +112,20 @@ public class CstCustomer implements java.io.Serializable {
 				+ custTurnover + ", custWebsite=" + custWebsite + ", custZip="
 				+ custZip + "]";
 	}
+
+
 	
 	
+
+	// Property accessors
+
+
+	public String getCustNo() {
+		return this.custNo;
+	}
+	public void setCustNo(String custNo) {
+		this.custNo = custNo;
+	}
 
 	public Set<CstService> getCstService() {
 		return cstService;
@@ -135,9 +143,8 @@ public class CstCustomer implements java.io.Serializable {
 		this.cstActivity = cstActivity;
 	}
 
-	public void setCustNo(String custNo) {
-		this.custNo = custNo;
-	}
+
+
 
 	public String getCustName() {
 		return this.custName;
@@ -315,6 +322,7 @@ public class CstCustomer implements java.io.Serializable {
 		this.custStatus = custStatus;
 	}
 
+
 	public Set<CstLinkman> getCstLinkman() {
 		return cstLinkman;
 	}
@@ -322,5 +330,23 @@ public class CstCustomer implements java.io.Serializable {
 	public void setCstLinkman(Set<CstLinkman> cstLinkman) {
 		this.cstLinkman = cstLinkman;
 	}
+
+
+	public Set<CstLost> getCstLost() {
+		return cstLost;
+	}
+
+	public void setCstLost(Set<CstLost> cstLost) {
+		this.cstLost = cstLost;
+	}
+
+	public Set<Orders> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(Set<Orders> orders) {
+		this.orders = orders;
+	}
+	
 
 }

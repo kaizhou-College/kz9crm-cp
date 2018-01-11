@@ -20,8 +20,11 @@ public interface SalChanceDao {
 	
 	//查
 	List select(Class clazz);
+	//去修改
+	Object queryById(int chcId);
+	//实际修改
+	void update(int chcId,String chcDesc,String chcDueTo);
 	
-
 }
 	
 

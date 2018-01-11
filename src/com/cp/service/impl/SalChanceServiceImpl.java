@@ -1,4 +1,4 @@
-package com.cp.service.impl;
+﻿package com.cp.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -14,18 +14,6 @@ import com.cp.service.SalChanceService;
 public class SalChanceServiceImpl  implements SalChanceService{
 	@Autowired
 	private SalChanceDao salChanceDao;
-	
-	public SalChance todispatch(int chcId) {
-		
-		System.out.println("进入了BizImpl");
-		System.out.println(chcId);
-		
-		SalChance salChance =(SalChance) salChanceDao.todispatch(chcId);
-		
-		return salChance;
-	}
-	
-	
 
 	public void dispatch(int chcId,int chcCreateId, Date chcDueDate) {
 		// TODO Auto-generated method stub
@@ -50,12 +38,31 @@ public class SalChanceServiceImpl  implements SalChanceService{
 		salChanceDao.save(salChance2);
 		
 	}
-
-
-
+	//查
 	public List select(Class clazz) {
 		List list=salChanceDao.select(clazz);
 		return list;
+	}
+	//指派
+	public SalChance todispatch(int chcId) {
+		//System.out.println("进入了BizImpl");
+		//System.out.println(chcId);
+		SalChance salChance =(SalChance) salChanceDao.todispatch(chcId);
+		return salChance;
+	}
+	//去修改
+	public SalChance queryById(int chcId) {
+		return (SalChance) salChanceDao.queryById(chcId);
+	}
+	//实际修改
+	public void update(int chcId,String chcDesc,String chcDueTo) {
+		salChanceDao.update(chcId,chcDesc,chcDueTo);
+	}
+	public SalChanceDao getSalChanceDao() {
+		return salChanceDao;
+	}
+	public void setSalChanceDao(SalChanceDao salChanceDao) {
+		this.salChanceDao = salChanceDao;
 	}
 
 }

@@ -12,7 +12,7 @@
         </id>
         <property name="custName" type="java.lang.String">
             <column name="CUST_NAME"  />
-        </property>
+</property>
         <property name="custRegion" type="java.lang.String">
             <column name="CUST_REGION" />
         </property>
@@ -76,6 +76,7 @@
         <property name="custStatus" type="java.lang.String">
             <column name="CUST_STATUS" length="1" />
         </property>
+
         
         <set name="cstLinkman" cascade="all" inverse="true">
         	<key column="LKM_CUST_NO"></key>
@@ -94,5 +95,15 @@
         </set>
         
         
+
+        <set name="cstLost" cascade="all" inverse="true">
+        	<key column="CUST_NO"></key>
+        	<one-to-many class="com.cp.entity.CstLost"/>
+        </set>
+        <set name="orders" cascade="all" inverse="true">
+        	<key column="CUST_NO"></key>
+        	<one-to-many class="com.cp.entity.Orders"/>
+        </set>
+
     </class>
 </hibernate-mapping>

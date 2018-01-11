@@ -1,4 +1,4 @@
-package com.cp.service;
+﻿package com.cp.service;
 
 import java.util.Date;
 import java.util.List;
@@ -16,5 +16,10 @@ public interface SalChanceService {
 
 	//查
 	 List select(Class clazz);
+//去修改
+	SalChance queryById(int chcId);
+	//实际修改
+	void update(int chcId,String chcDesc,String chcDueTo);
+
 
 }

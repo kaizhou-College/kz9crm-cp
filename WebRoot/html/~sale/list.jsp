@@ -64,8 +64,7 @@
 			<img onclick="to('${basePath}html/salchance_todispatch');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
 			
 			
-			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
-
+			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" /
 			
 		</td>
 	</tr>

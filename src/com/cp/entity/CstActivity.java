@@ -1,6 +1,6 @@
 package com.cp.entity;
 
-import java.sql.Timestamp;
+
 import java.util.Date;
 
 /**
@@ -12,6 +12,7 @@ public class CstActivity implements java.io.Serializable {
 	// Fields
 
 	private Integer atvId;
+
 //	private String atvCustNo;
 	private String atvCustName;
 	private Date atvDate;
@@ -21,6 +22,8 @@ public class CstActivity implements java.io.Serializable {
 	
 	private CstCustomer cstCustomer;
 
+
+
 	// Constructors
 
 	/** default constructor */
@@ -28,6 +31,7 @@ public class CstActivity implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
+
 	public CstActivity(Integer atvId, Date atvDate,
 			String atvPlace, String atvTitle) {
 		this.atvId = atvId;
@@ -37,6 +41,7 @@ public class CstActivity implements java.io.Serializable {
 	}
 
 	/** full constructor */
+
 	public CstActivity(Integer atvId, String atvCustName,
 			Date atvDate, String atvPlace, String atvTitle, String atvDesc) {
 		this.atvId = atvId;
@@ -48,8 +53,6 @@ public class CstActivity implements java.io.Serializable {
 	}
 
 	// Property accessors
-	
-	
 
 	public Integer getAtvId() {
 		return this.atvId;
@@ -74,13 +77,7 @@ public class CstActivity implements java.io.Serializable {
 		this.atvId = atvId;
 	}
 
-//	public String getAtvCustNo() {
-//		return this.atvCustNo;
-//	}
-//
-//	public void setAtvCustNo(String atvCustNo) {
-//		this.atvCustNo = atvCustNo;
-//	}
+
 
 	public String getAtvCustName() {
 		return this.atvCustName;
@@ -97,6 +94,7 @@ public class CstActivity implements java.io.Serializable {
 	public void setAtvDate(Date atvDate) {
 		this.atvDate = atvDate;
 	}
+	
 
 	public String getAtvPlace() {
 		return this.atvPlace;

@@ -43,7 +43,6 @@ public class SalPlan implements java.io.Serializable {
 		this.plaResult = plaResult;
 	}
 	public SalPlan() {
-		super();
 	}
 	public SalPlan(Integer plaId, Date plaDate, String plaTodo, String plaResult) {
 		super();
@@ -56,5 +55,11 @@ public class SalPlan implements java.io.Serializable {
 	public String toString() {
 		return "SalPlan [plaDate=" + plaDate + ", plaId=" + plaId
 				+ ", plaResult=" + plaResult + ", plaTodo=" + plaTodo + "]";
+	}
+	public SalChance getSalChance() {
+		return salChance;
+	}
+	public void setSalChance(SalChance salChance) {
+		this.salChance = salChance;
 	}
 }

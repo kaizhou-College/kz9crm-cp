@@ -904,8 +904,9 @@ function initialise() {
 
 	
 	L02 = theMenu.addChild(l2ID, "Folder", "客户管理", "", "客户管理...");
+
 	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "cstCustomer_select", "客户信息管理...");
-	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "${basePath}/html/~cust/lost/list.html", "客户流失管理...");	
+	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "cstLost_byPage", "客户流失管理...");	
 
 	L03 = theMenu.addChild(l2ID, "Folder", "服务管理", "", "客户服务管理...");
 	L0301 = theMenu.addChild(L03, "Document", "服务创建", "${basePath}/html/~cust/service/add.jsp", "服务创建...");
@@ -916,10 +917,11 @@ function initialise() {
 	
 	
 	L04 = theMenu.addChild(l2ID, "Folder", "统计报表", "", "统计报表...");
-	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "${basePath}/html/~rept/contr.html", "客户贡献分析...");
-	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "${basePath}/html/~rept/cons.html", "客户构成分析...");
-	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "${basePath}/html/~rept/ser.html", "客户服务分析...");
-	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "${basePath}/html/~rept/lost.html", "客户流失分析...");
+
+	L0401 = theMenu.addChild(L04, "Document", "客户贡献分析", "rept_contrSel", "客户贡献分析...");
+	L0402 = theMenu.addChild(L04, "Document", "客户构成分析", "rept_consSel", "客户构成分析...");
+	L0403 = theMenu.addChild(L04, "Document", "客户服务分析", "rept_serSel", "客户服务分析...");
+	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "rept_lostSel", "客户流失分析...");
 	
 	L05 = theMenu.addChild(l2ID, "Folder", "基础数据", "", "基础数据...");
 	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/html/~basd/dict.html", "数据字典管理...");
