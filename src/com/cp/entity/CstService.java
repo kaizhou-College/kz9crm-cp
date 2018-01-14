@@ -34,7 +34,7 @@ public class CstService implements java.io.Serializable {
 	private String svrDealBy;
 	private Date svrDealDate;
 	private String svrResult;
-	private Integer svrSatisfy;
+	private String svrSatisfy;
 	
 //	private int stuno;
 
@@ -73,7 +73,7 @@ public class CstService implements java.io.Serializable {
 			Date svrCreateDate, Integer svrDueId, String svrDueTo,
 			Date svrDueDate, String svrDeal, Integer svrDealId,
 			String svrDealBy, Date svrDealDate, String svrResult,
-			Integer svrSatisfy) {
+			String svrSatisfy) {
 		this.svrId = svrId;
 		this.svrType = svrType;
 		this.svrTitle = svrTitle;
@@ -272,11 +272,11 @@ public class CstService implements java.io.Serializable {
 		this.svrResult = svrResult;
 	}
 
-	public Integer getSvrSatisfy() {
+	public String getSvrSatisfy() {
 		return this.svrSatisfy;
 	}
 
-	public void setSvrSatisfy(Integer svrSatisfy) {
+	public void setSvrSatisfy(String svrSatisfy) {
 
 		this.svrSatisfy = svrSatisfy;
 	}

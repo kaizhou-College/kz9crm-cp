@@ -22,7 +22,7 @@
 		<th>姓名</th>
 		<td>
 		<input type="hidden" value="<s:property value="cstLinkman.lkmId"/>" name="lkmId">
-		<input readonly name="lkmName" value="<s:property value="cstLinkman.lkmName"/>" size="20"  /><span class="red_star">*</span></td>
+		<input  name="lkmName" value="<s:property value="cstLinkman.lkmName"/>" size="20"  /><span class="red_star">*</span></td>
 		<th>性别</th>
 		<td>
 		<s:radio list="{'男','女'}" name="lkmSex" value="%{cstLinkman.lkmSex}"/>

@@ -1,5 +1,6 @@
 package com.cp.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.cp.entity.CstService;
@@ -23,5 +24,7 @@ public interface CstServiceDao {
 	void detailupdate(Integer svrId, CstService cstService);
 
 	void detailupdate2(Integer svrId, CstService cstService);
+
+	List superselect(CstService cstService, Date date1, Date date2, int pageIndex, int pageSize);
 
 }

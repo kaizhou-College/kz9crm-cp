@@ -66,7 +66,7 @@
         </property>
         
         <property name="chcStatus" type="java.lang.Integer">
-            <column name="CHC_STATUS" precision="1" scale="0" not-null="true" />
+            <column name="CHC_STATUS" precision="1" scale="0" />
         </property>
         
        <!-- <one-to-one name="salPlan" class="com.cp.entity.SalPlan" cascade="all"></one-to-one>

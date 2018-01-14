@@ -64,7 +64,7 @@
             <column name="SVR_RESULT" />
         </property>
 
-        <property name="svrSatisfy" type="java.lang.Integer">
+        <property name="svrSatisfy" type="java.lang.String">
             <column name="SVR_SATISFY" length="1" />
         </property>
         

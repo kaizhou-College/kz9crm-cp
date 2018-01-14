@@ -34,5 +34,10 @@
 	 		<required>true</required>
 	 		<rtexprvalue>true</rtexprvalue>
 	 	</attribute>
- </tag>
+	 	<!--<attribute>
+	 		<name>queryJson</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+ --></tag>
 </taglib>

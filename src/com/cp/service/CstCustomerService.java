@@ -18,4 +18,7 @@ public interface CstCustomerService {
 
 	List<CstCustomer> byPage(int pageIndex, int pageSize);
 
+	List<CstCustomer> superselect(CstCustomer cstCustomer, int pageIndex,
+			int pageSize);
+
 }

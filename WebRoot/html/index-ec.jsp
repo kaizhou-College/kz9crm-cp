@@ -924,7 +924,7 @@ function initialise() {
 	L0404 = theMenu.addChild(L04, "Document", "客户流失分析", "rept_lostSel", "客户流失分析...");
 	
 	L05 = theMenu.addChild(l2ID, "Folder", "基础数据", "", "基础数据...");
-	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/html/~basd/dict.html", "数据字典管理...");
+	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "basDict_select", "数据字典管理...");
 	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "${basePath}/html/~basd/product.html", "查询产品信息...");
 	L0503 = theMenu.addChild(L05, "Document", "查询库存", "${basePath}/html/~basd/storage.html", "查询库存...");
 

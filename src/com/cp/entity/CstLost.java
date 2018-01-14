@@ -1,6 +1,7 @@
 package com.cp.entity;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class CstLost implements java.io.Serializable {
 
@@ -11,8 +12,8 @@ public class CstLost implements java.io.Serializable {
 	private String lstCustName;
 	private Integer lstCustManagerId;
 	private String lstCustManagerName;
-	private Timestamp lstLastOrderDate;
-	private Timestamp lstLostDate;
+	private Date lstLastOrderDate;
+	private Date lstLostDate;
 	private String lstDelay;
 	private String lstReason;
 	private String lstStatus;
@@ -31,7 +32,7 @@ public class CstLost implements java.io.Serializable {
 
 	public CstLost(Integer lstId, String lstCustNo, String lstCustName,
 			Integer lstCustManagerId, String lstCustManagerName,
-			Timestamp lstLastOrderDate, Timestamp lstLostDate, String lstDelay,
+			Date lstLastOrderDate, Date lstLostDate, String lstDelay,
 			String lstReason, String lstStatus) {
 		super();
 		this.lstId = lstId;
@@ -88,19 +89,19 @@ public class CstLost implements java.io.Serializable {
 		this.lstCustManagerName = lstCustManagerName;
 	}
 
-	public Timestamp getLstLastOrderDate() {
+	public Date getLstLastOrderDate() {
 		return this.lstLastOrderDate;
 	}
 
-	public void setLstLastOrderDate(Timestamp lstLastOrderDate) {
+	public void setLstLastOrderDate(Date lstLastOrderDate) {
 		this.lstLastOrderDate = lstLastOrderDate;
 	}
 
-	public Timestamp getLstLostDate() {
+	public Date getLstLostDate() {
 		return this.lstLostDate;
 	}
 
-	public void setLstLostDate(Timestamp lstLostDate) {
+	public void setLstLostDate(Date lstLostDate) {
 		this.lstLostDate = lstLostDate;
 	}
 

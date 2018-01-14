@@ -21,5 +21,10 @@ public interface SalChanceService {
 	//实际修改
 	void update(int chcId,String chcDesc,String chcDueTo);
 
+	public long count();
+
+	public List<SalChance> superselect(SalChance salChance, int pageIndex,
+			int pageSize);
+
 
 }

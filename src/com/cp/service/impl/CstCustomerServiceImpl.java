@@ -63,6 +63,15 @@ public class CstCustomerServiceImpl implements CstCustomerService  {
 		int count = cstCustomerDao.count();
 		return count;
 	}
+
+
+
+	public List<CstCustomer> superselect(CstCustomer cstCustomer,
+			int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		List list=cstCustomerDao.superselect(cstCustomer,  pageIndex, pageSize);
+		return list;
+	}
 	
 
 

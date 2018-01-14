@@ -10,6 +10,8 @@ public class TagFY extends SimpleTagSupport{
 	private String pageUrl;
 	private int pageMax;
 	private int count;
+//	private String queryJson;
+	
 	/*	共${countPlan }条记录 每页${pageSize }条
 	第${page }页/${pageMax}共页
 		<a href="${pageUrl}?pageIndex=1">第一页</a>
@@ -67,4 +69,11 @@ public class TagFY extends SimpleTagSupport{
 	public void setCount(int count) {
 		this.count = count;
 	}
+//	public String getQueryJson() {
+//		return queryJson;
+//	}
+//	public void setQueryJson(String queryJson) {
+//		this.queryJson = queryJson;
+//	}
+	
 }

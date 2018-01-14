@@ -69,7 +69,10 @@
 	</bean>
 	
 	<bean id="reptDao" class="com.cp.dao.impl.ReptDaoImpl">
-
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="basDictDao" class="com.cp.dao.impl.BasDictDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	

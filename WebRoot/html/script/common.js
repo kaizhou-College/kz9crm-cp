@@ -20,10 +20,11 @@ function add(url){
 	//alert('新建成功！');
 	to(url);
 }
-function del(msg){
-	if (window.confirm("确认删除"+msg+"？")){
-		reload();
-		window.location.href="${basePath}html/salchance_delete?chcId="+2;
+
+function del(url){
+	if (window.confirm("确认删除？")){
+		alert("确认了");
+		to(url);
 	}
 
 }

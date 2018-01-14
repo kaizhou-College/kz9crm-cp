@@ -24,6 +24,12 @@ public interface SalChanceDao {
 	Object queryById(int chcId);
 	//实际修改
 	void update(int chcId,String chcDesc,String chcDueTo);
+
+
+	long count();
+
+
+	List superselect(SalChance salChance, int pageIndex, int pageSize);
 	
 }
 	
