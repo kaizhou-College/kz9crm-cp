@@ -54,14 +54,33 @@ public class SalChanceServiceImpl  implements SalChanceService{
 	public void update(int chcId,String chcDesc,String chcDueTo) {
 		salChanceDao.update(chcId,chcDesc,chcDueTo);
 	}
+	
 	//分页
 	public List<SalChance> byPage(int pageIndex, int pageSize) {
 		List list = salChanceDao.byPage(pageIndex, pageSize);
 		return list;
 	}
+	
+	public SalChanceDao getSalChanceDao() {
+		return salChanceDao;
+
+	}
+
+
 	public long count() {
-		Long count = salChanceDao.count();
+		// TODO Auto-generated method stub
+		long count = salChanceDao.count();
 		return count;
+	
+	}
+
+
+
+	public List<SalChance> superselect(SalChance salChance, int pageIndex,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		List list=salChanceDao.superselect(salChance,  pageIndex, pageSize);
+		return list;
 	}
 
 }

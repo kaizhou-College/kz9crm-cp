@@ -52,7 +52,7 @@
             <column name="CHC_DUE_DATE" length="7" />
         </property>
         <property name="chcStatus" type="java.lang.Integer">
-            <column name="CHC_STATUS" precision="1" scale="0"  />
+            <column name="CHC_STATUS" precision="1" scale="0" />
         </property>
         <set name="salPlan" cascade="all" inverse="true">
         	<key column="PLA_CHC_ID"></key>

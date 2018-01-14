@@ -45,14 +45,8 @@
 		<tr>
 		<th colspan="100" class="pager">
 <div class="pager">
-	共59条记录 每页<input value="10" size="2" />条
-	第<input value="1" size="2"/>页/共5页
-	<a href="#">第一页</a>
-	<a href="#">上一页</a>
-	<a href="#">下一页</a>
-	<a href="#">最后一页</a>
-	转到<input value="1" size="2" />页
-	<button width="20" onclick="reload();">GO</button>
+		<comcp:queryByPage count="${listpage.count}" pageIndex="${listpage.pageIndex}" pageSize="${listpage.pageSize}" pageMax="${listpage.pageMax}" pageUrl="${listpage.pageUrl}"></comcp:queryByPage>
+
 </div>
 		</th>
 	</tr>

@@ -134,6 +134,35 @@ public class CstCustomerAction {
 		cstCustomerService.delete(custNo);
 		return "delete_ok";
 	}
+	
+	//高级查询
+	public String superselect(){
+		
+		System.out.println("进入了高级查询");
+		System.out.println(cstCustomer);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("cstCustomer_superselect");//跳转路径
+		listpage.setCount(cstCustomerService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		System.out.println("第"+listpage.getPageIndex()+"页");
+		System.out.println("有"+listpage.getPageMax()+"页");	
+		System.out.println("有"+listpage.getCount()+"条记录");	
+		
+		cstCustomerlist=cstCustomerService.superselect(cstCustomer,listpage.getPageIndex(), listpage.getPageSize());
+		
+		return "superselect_ok";
+	}
 
 
 	public ListPage getListpage() {

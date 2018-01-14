@@ -80,6 +80,10 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
+	<bean id="basDictDao" class="com.cp.dao.impl.BasDictDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 		<!--aspect自动生成代理  -->
 	<tx:advice id="comcpadvice" transaction-manager="transactionManager">
 		<tx:attributes>

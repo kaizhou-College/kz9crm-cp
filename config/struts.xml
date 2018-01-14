@@ -11,9 +11,9 @@
 				<!-- 机会管理 -->
 			<action name="salchance_*" class="salChanceAction" method="{1}">
 				<result name="todispatch_ok">/html/~sale/dispatch.jsp</result>
-				<result name="dispatch_ok">/html/~sale/list.jsp</result>
-				<result name="delete_ok">/html/~sale/list.jsp</result>
-				<result name="save_ok">/html/~sale/list.jsp</result>
+				<result name="dispatch_ok" type="redirectAction">salchance_bypage</result>
+				<result name="delete_ok"  type="redirectAction">salchance_bypage</result>
+				<result name="save_ok"  type="redirectAction">salchance_bypage</result>
 				<result name="superselect_ok">/html/~sale/list.jsp</result>
 				<result name="salchancelist_success">/html/~sale/list.jsp</result>
 				<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
@@ -36,6 +36,7 @@
 				<result name="toupdate_ok">/html/~cust/cust/edit.jsp</result>
 				 <result name="update_ok" type="redirectAction">cstCustomer_select</result>
 				 <result name="delete_ok" type="redirectAction">cstCustomer_select</result>
+				 <result name="superselect_ok" >/html/~cust/cust/list.jsp</result>
 			</action>
 			<action name="cstLinkman_*" class="cstLinkmanAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/linkman.jsp</result>
@@ -72,6 +73,11 @@
 				<result name="detailupdate2_ok" type="redirectAction">cstService_todispatch</result>
 				<result name="toarch_ok">/html/~cust/service/arch.jsp</result>
 				<result name="todetail3_ok">/html/~cust/service/detail.jsp</result>
+				 <result name="superselect1_ok" >/html/~cust/service/dispatch.jsp</result>
+				  <result name="superselect2_ok" >/html/~cust/service/deal.jsp</result>
+				  <result name="superselect3_ok" >/html/~cust/service/feedback.jsp</result>
+				  <result name="superselect4_ok" >/html/~cust/service/arch.jsp</result>
+
 				<result name="salchancelist_success">/html/~sale/list.jsp</result>
 				<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
 				<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
@@ -102,5 +108,15 @@
 				<result name="basd_product">/html/~basd/product.jsp</result>
 				<result name="basd_storage">/html/~basd/storage.jsp</result>
 			</action>
+			<!-- 基础数据 -->
+			<action name="basDict_*" class="basDictAction" method="{1}">
+				<result name="select_ok">/html/~basd/dict.jsp</result>
+				<result name="toupdate_ok">/html/~basd/dict_edit.jsp</result>
+				<result name="update_ok" type="redirectAction">basDict_select</result>
+				<result name="delete_ok" type="redirectAction">basDict_select</result>
+				<result name="add_ok"  type="redirectAction">basDict_select</result>
+				<result name="superselect_ok">/html/~basd/dict.jsp</result>
+			</action>
+			
 		</package>
 </struts>

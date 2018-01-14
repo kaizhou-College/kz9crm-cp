@@ -1,5 +1,6 @@
 package com.cp.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.cp.entity.CstService;
@@ -23,6 +24,9 @@ public interface CstServiceService {
 	void detailupdate(Integer svrId, CstService cstService);
 
 	void detailupdate2(Integer svrId, CstService cstService);
+
+	List<CstService> superselect(CstService cstService, Date date1, Date date2, int pageIndex,
+			int pageSize);
 
 
 }

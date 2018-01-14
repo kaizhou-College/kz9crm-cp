@@ -108,6 +108,8 @@ public class CstLinkmanAction {
 		cstLinkmanService.add(cstCustomer,cstLinkman2);
 		return "add_ok";
 	}
+	
+	
 
 	
 	

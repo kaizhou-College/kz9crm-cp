@@ -10,42 +10,35 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="${basePath}html/cstService_superselect1" method="post">
 <div class="page_title">客户服务管理 > 服务分配</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="reload();">查询</button>  
+	<input type="submit" class="common_button"  value="查询">
 </div>
 <table class="query_form_table" height="53">
 	<tr>
 		<th height="28">客户</th>
-		<td><input /></td>
+		<td><input name="cstService.svrCustName" value="<s:property value="cstService.svrCustName"/>"/></td>
 		<th height="28">概要</th>
-		<td><input /></td>
+		<td><input name="cstService.svrTitle" value="<s:property value="cstService.svrTitle"/>"/></td>
 		<th height="28">服务类型</th>
 		<td>
-			<select name="D1">
-				<option>全部</option>
-				<option>咨询</option>
-				<option>建议</option>
-				<option>投诉</option>
-			</select>
+		<s:select list="#{'':'全部','咨询':'咨询','建议':'建议','投诉':'投诉'}" name="cstService.svrType" value="<s:property value='cstService.svrType'/>"></s:select>
 		</td>
 	</tr>
 	<tr>
 		<th height="22">创建日期</th>
 		<td colspan="3">
-			<input name="T2" size="10" /> - <input name="T1" size="10" /></td>
+			<input name="date1" size="10" value="<s:property value='date1'/>"/> - <input name="date2" size="10" value="<s:property value='date2'/>" /></td>
 		<th height="22">状态</th>
 		<td>
-			<select name="D1">
-				<option selected>新创建</option>
-			</select>
+		<s:select list="#{'':'全部','新创建':'新创建','已归档':'已归档'}" name="cstService.svrStatus" value="<s:property value='cstService.svrStatus'/>"></s:select>
 		</td>
 	</tr>
 </table>
 <br />
-
+</form>
 
 <table class="data_list_table">
 	<tr>

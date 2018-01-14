@@ -1,5 +1,6 @@
 package com.cp.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,6 +66,13 @@ public class CstServiceServiceImpl implements CstServiceService {
 		// TODO Auto-generated method stub
 		cstServiceDao.detailupdate2(svrId,cstService);
 		
+	}
+
+	public List<CstService> superselect(CstService cstService, Date date1,
+			Date date2, int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		List list=cstServiceDao.superselect(cstService, date1,date2, pageIndex, pageSize);
+		return list;
 	}
 
 }

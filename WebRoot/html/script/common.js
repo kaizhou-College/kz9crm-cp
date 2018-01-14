@@ -20,10 +20,11 @@ function add(url){
 	//alert('新建成功！');
 	to(url);
 }
-function del(msg){
+
+function del(url){
 	if (window.confirm("确认删除？")){
-		//reload();
-		window.location.href=msg;
+		alert("确认了");
+		to(url);
 	}
 
 }

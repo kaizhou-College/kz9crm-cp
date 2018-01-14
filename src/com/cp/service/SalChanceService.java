@@ -26,4 +26,8 @@ public interface SalChanceService {
 	public List<SalChance> byPage(int pageIndex, int pageSize);
 
 
+	public List<SalChance> superselect(SalChance salChance, int pageIndex,
+			int pageSize);
+
+
 }

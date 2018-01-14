@@ -6,7 +6,8 @@
 -->
 <hibernate-mapping>
 
-    <class name="com.cp.entity.SalPlan" table="SAL_PLAN" schema="PYJ">
+    <class name="com.cp.entity.SalPlan" table="SAL_PLAN">
+
         <id name="plaId" type="java.lang.Integer">
             <column name="PLA_ID" precision="22" scale="0" />
             <generator class="native" />

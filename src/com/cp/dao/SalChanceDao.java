@@ -26,7 +26,12 @@ public interface SalChanceDao {
 	void update(int chcId,String chcDesc,String chcDueTo);
 //分页用
 	List byPage(int pageIndex, int pageSize);
-	Long count();
+
+
+	long count();
+
+
+	List superselect(SalChance salChance, int pageIndex, int pageSize);
 	
 }
 	
