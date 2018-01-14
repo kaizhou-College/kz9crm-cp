@@ -21,9 +21,9 @@ function add(url){
 	to(url);
 }
 function del(msg){
-	if (window.confirm("确认删除"+msg+"？")){
-		reload();
-		window.location.href="${basePath}html/salchance_delete?chcId="+2;
+	if (window.confirm("确认删除？")){
+		//reload();
+		window.location.href=msg;
 	}
 
 }

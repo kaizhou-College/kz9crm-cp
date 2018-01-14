@@ -24,10 +24,10 @@
         <property name="lstCustManagerName" type="java.lang.String">
             <column name="LST_CUST_MANAGER_NAME" not-null="true" />
         </property>
-        <property name="lstLastOrderDate" type="java.sql.Timestamp">
+        <property name="lstLastOrderDate" type="java.util.Date">
             <column name="LST_LAST_ORDER_DATE" length="7" />
         </property>
-        <property name="lstLostDate" type="java.sql.Timestamp">
+        <property name="lstLostDate" type="java.util.Date">
             <column name="LST_LOST_DATE" length="7" />
         </property>
         <property name="lstDelay" type="java.lang.String">

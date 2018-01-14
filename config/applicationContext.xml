@@ -61,7 +61,7 @@
 	</bean>
 	
 	<bean id="cstServiceDao" class="com.cp.dao.impl.CstServiceDaoImpl">
-	<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<bean id="cstLostDao" class="com.cp.dao.impl.CstLostDaoImpl">
@@ -69,7 +69,14 @@
 	</bean>
 	
 	<bean id="reptDao" class="com.cp.dao.impl.ReptDaoImpl">
-
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="basdDao" class="com.cp.dao.impl.BasdDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+		
+	<bean id="salPlanDao" class="com.cp.dao.impl.SalPlanDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
@@ -97,7 +104,12 @@
 			<tx:method name="serSelect*" propagation="REQUIRED"/>
 			<tx:method name="lostSelect*" propagation="REQUIRED"/>
 			<tx:method name="conteSelect*" propagation="REQUIRED"/>
-
+			<tx:method name="productByPage" propagation="REQUIRED"/>
+			
+			<tx:method name="countsuper*" propagation="REQUIRED"/>
+			<tx:method name="superbyPage" propagation="REQUIRED"/>
+			<tx:method name="ajaxPlanUpdate*" propagation="REQUIRED"/>
+			<tx:method name="ajaxPlan*" propagation="REQUIRED"/>
 			<tx:method name="*" read-only="true"/>
 		</tx:attributes>
 	</tx:advice>

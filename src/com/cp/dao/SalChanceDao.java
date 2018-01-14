@@ -19,11 +19,14 @@ public interface SalChanceDao {
 	void save(SalChance salChance2);
 	
 	//查
-	List select(Class clazz);
+//	List select(Class clazz);
 	//去修改
 	Object queryById(int chcId);
 	//实际修改
 	void update(int chcId,String chcDesc,String chcDueTo);
+//分页用
+	List byPage(int pageIndex, int pageSize);
+	Long count();
 	
 }
 	

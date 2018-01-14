@@ -15,11 +15,15 @@ public interface SalChanceService {
 	public void save(SalChance salChance2);
 
 	//查
-	 List select(Class clazz);
+	// List select(Class clazz);
 //去修改
 	SalChance queryById(int chcId);
 	//实际修改
 	void update(int chcId,String chcDesc,String chcDueTo);
+//分页
+	public long count();
+
+	public List<SalChance> byPage(int pageIndex, int pageSize);
 
 
 }

@@ -21,28 +21,24 @@ public class SalChanceServiceImpl  implements SalChanceService{
 		salChanceDao.dispatch(chcId,chcCreateId, chcDueDate);
 		
 	}
-
-
-
+	//删除
 	public void delete(int chcId) {
 		// TODO Auto-generated method stub
 		System.out.println("这里是Biz"+chcId);
 		salChanceDao.delete(chcId);
 	}
-
-
-
+//添加
 	public void save(SalChance salChance2) {
 		// TODO Auto-generated method stub
 		System.out.println(salChance2);
 		salChanceDao.save(salChance2);
 		
 	}
-	//查
+/*	//查
 	public List select(Class clazz) {
 		List list=salChanceDao.select(clazz);
 		return list;
-	}
+	}*/
 	//指派
 	public SalChance todispatch(int chcId) {
 		//System.out.println("进入了BizImpl");
@@ -58,11 +54,14 @@ public class SalChanceServiceImpl  implements SalChanceService{
 	public void update(int chcId,String chcDesc,String chcDueTo) {
 		salChanceDao.update(chcId,chcDesc,chcDueTo);
 	}
-	public SalChanceDao getSalChanceDao() {
-		return salChanceDao;
+	//分页
+	public List<SalChance> byPage(int pageIndex, int pageSize) {
+		List list = salChanceDao.byPage(pageIndex, pageSize);
+		return list;
 	}
-	public void setSalChanceDao(SalChanceDao salChanceDao) {
-		this.salChanceDao = salChanceDao;
+	public long count() {
+		Long count = salChanceDao.count();
+		return count;
 	}
 
 }
