@@ -2,16 +2,7 @@
 <%@ taglib uri="/struts-tags" prefix="s" %>
 <%@include file="/comm/comm.jsp" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<%--<script src="${basepath}/html/js/jquery-1.4.2.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-	$(function(){
-		$("#chance_del").click(function(){
-			alter(1);
-		});
-	});
-
-</script>
---%><html>
+<<script src="${basepath}/html/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 <head>
 <link href="${basePath}/html/css/style.css" rel="stylesheet" type="text/css">
 <script src="${basePath}/html/script/common.js"></script>
@@ -59,32 +50,23 @@
 		<td class="list_data_text"><s:property value="#listsalChance.chcCreateDate"/></td>
 		<td class="list_data_op">
 			
-			<img onclick="to('${basePath}html/salchance_toupdate');" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
+			<img onclick="to('${basePath}html/salchance_toupdate?salChance.chcId='+<s:property value="#listsalChance.chcId"/>);" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
 
 			<img onclick="to('${basePath}html/salchance_todispatch');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
 			
 			
-			<img onclick="del('“这里应该是商品的ID”');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" /
+			<img onclick="del('${basePath}html/salchance_delete?chcId=<s:property value="#listsalChance.chcId"/>');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" /
 			
 		</td>
 	</tr>
 	</s:iterator>
-	<tr>
-		<th colspan="7" class="pager">
-<div class="pager">
-	共59条记录 每页<input value="10" size="2" />条
-	第<input value="1" size="2"/>页/共5页
-	<a href="#">第一页</a>
-	<a href="#">上一页</a>
-	<a href="#">下一页</a>
-	<a href="#">最后一页</a>
-	转到<input value="1" size="2" />页
-	<button width="20" onclick="reload();">GO</button>
-</div>
-		</th>
-	
-	<%--<comcp:queryByPage max="${max}" index="${index}" uri="salchance_bypage"></comcp:queryByPage>
-	--%></tr>
+		<tr>
+			<th colspan="7" class="pager">
+				<div class="pager">
+					<comcp:queryByPage count="${listpage.count}" pageIndex="${listpage.pageIndex}" pageSize="${listpage.pageSize}" pageMax="${listpage.pageMax}" pageUrl="${listpage.pageUrl}"></comcp:queryByPage>
+				</div>
+			</th>
+		</tr>
 </table>
 
 </body>

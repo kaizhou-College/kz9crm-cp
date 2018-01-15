@@ -1,5 +1,4 @@
 ﻿<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-
 <%@include file="/comm/comm.jsp" %>
 
 <HTML>
@@ -898,16 +897,14 @@ function initialise() {
 	
 	L01 = theMenu.addChild(l2ID, "Folder", "营销管理", "", "营销管理...");
 	L0101 = theMenu.addChild(L01, "Document", "销售机会管理", "salchance_bypage", "销售机会管理...");
-
-	L0102 = theMenu.addChild(L01, "Document", "客户开发计划", "${basePath}/html/~sale/dev.html", "客户开发计划...");
-
+	L0102 = theMenu.addChild(L01, "Document", "客户开发计划", "salPlan_byPage", "客户开发计划...");
 
 	
 	L02 = theMenu.addChild(l2ID, "Folder", "客户管理", "", "客户管理...");
-
 	L0201 = theMenu.addChild(L02, "Document", "客户信息管理", "cstCustomer_select", "客户信息管理...");
 	L0201 = theMenu.addChild(L02, "Document", "客户流失管理", "cstLost_byPage", "客户流失管理...");	
 
+	
 	L03 = theMenu.addChild(l2ID, "Folder", "服务管理", "", "客户服务管理...");
 	L0301 = theMenu.addChild(L03, "Document", "服务创建", "${basePath}/html/~cust/service/add.jsp", "服务创建...");
 	L0302 = theMenu.addChild(L03, "Document", "服务分配", "cstService_todispatch", "服务分配...");
@@ -925,8 +922,8 @@ function initialise() {
 	
 	L05 = theMenu.addChild(l2ID, "Folder", "基础数据", "", "基础数据...");
 	L0501 = theMenu.addChild(L05, "Document", "数据字典管理", "${basePath}/html/~basd/dict.html", "数据字典管理...");
-	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "${basePath}/html/~basd/product.html", "查询产品信息...");
-	L0503 = theMenu.addChild(L05, "Document", "查询库存", "${basePath}/html/~basd/storage.html", "查询库存...");
+	L0502 = theMenu.addChild(L05, "Document", "查询产品信息", "basd_productByPage", "查询产品信息...");
+	L0503 = theMenu.addChild(L05, "Document", "查询库存", "basd_storageBypage", "查询库存...");
 
         
 	theMenu.entry[l2ID].isopen = true;

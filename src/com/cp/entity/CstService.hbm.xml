@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
 
-    <class name="com.cp.entity.CstService" table="CST_SERVICE" schema="CRM">
+    <class name="com.cp.entity.CstService" table="CST_SERVICE" schema="PYJ">
         <id name="svrId" type="java.lang.Integer">
             <column name="SVR_ID" precision="22" scale="0" />
             <generator class="sequence" >
@@ -44,7 +44,6 @@
             <column name="SVR_DUE_TO" />
         </property>
         <property name="svrDueDate" type="java.util.Date">
-
             <column name="SVR_DUE_DATE" length="7" />
         </property>
         <property name="svrDeal" type="java.lang.String">
@@ -64,7 +63,7 @@
             <column name="SVR_RESULT" />
         </property>
 
-        <property name="svrSatisfy" type="java.lang.Integer">
+        <property name="svrSatisfy" type="java.lang.String">
             <column name="SVR_SATISFY" length="1" />
         </property>
         

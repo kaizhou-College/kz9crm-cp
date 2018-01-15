@@ -8,29 +8,40 @@
 
 		<package name="default" abstract="/html" extends="struts-default">
 			<!-- 营销管理 -->
+				<!-- 机会管理 -->
 			<action name="salchance_*" class="salChanceAction" method="{1}">
 				<result name="todispatch_ok">/html/~sale/dispatch.jsp</result>
 				<result name="dispatch_ok">/html/~sale/list.jsp</result>
 				<result name="delete_ok">/html/~sale/list.jsp</result>
 				<result name="save_ok">/html/~sale/list.jsp</result>
 				<result name="superselect_ok">/html/~sale/list.jsp</result>
-
-				
-			<result name="salchancelist_success">/html/~sale/list.jsp</result>
-			<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
-			<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
-			<result name="salchanceupdate_success" type="redirectAction">salchance_bypage</result>
-			<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
-			
+				<result name="salchancelist_success">/html/~sale/list.jsp</result>
+				<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
+				<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
+				<result name="salchanceupdate_success" type="redirectAction">salchance_bypage</result>
+				<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
 			</action>
-			
+				<!--开发 计划 -->
+			<action name="salPlan_*" class="salPlanAction" method="{1}">
+				<result name="byPage_success">/html/~sale/dev.jsp</result>
+				<result name="superSel_success">/html/~sale/devTemp.jsp</result>
+				<result name="planListSuccess_success">/html/~sale/dev_detail.jsp</result>
+				<result name="planListShow_success">/html/~sale/dev_plan.jsp</result>
+				<result name="ajaxPlan">/html/~sale/dev_plan.jsp</result>
+				<result name="salPlanAdd_success" type="chain">salPlan_planListShow</result>
+				<result name="salPlanDel_success" type="chain">salPlan_planListShow</result>
+				<result name="planList_success">/html/~sale/dev_execute.jsp</result>
+				<result name="planResult_success" type="chain">salPlan_planList</result>
+				<result name="planSuccess_success" type="chain">salPlan_byPage</result>
+			</action>
+		
+			<!-- 客户管理 -->
 			<action name="cstCustomer_*" class="cstCustomerAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/list.jsp</result>
 				<result name="toupdate_ok">/html/~cust/cust/edit.jsp</result>
 				 <result name="update_ok" type="redirectAction">cstCustomer_select</result>
 				 <result name="delete_ok" type="redirectAction">cstCustomer_select</result>
 			</action>
-			
 			<action name="cstLinkman_*" class="cstLinkmanAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/linkman.jsp</result>
 				<result name="delete_ok" type="redirectAction">cstCustomer_select</result>
@@ -39,8 +50,6 @@
 				<result name="toadd_ok">/html/~cust/cust/linkman_add.jsp</result>
 				<result name="add_ok" type="redirectAction">cstCustomer_select</result>
 			</action>
-			
-			
 			<action name="cstActivity_*" class="cstActivityAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/activities.jsp</result>
 				<result name="delete_ok" type="redirectAction">cstCustomer_select</result>
@@ -49,12 +58,12 @@
 				<result name="toadd_ok">/html/~cust/cust/activities_add.jsp</result>
 				<result name="add_ok" type="redirectAction">cstCustomer_select</result>
 			</action>
-			
 			<action name="orders_*" class="ordersAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/orders.jsp</result>
 			</action>
 			
 			
+			<!-- 服务管理 -->
 			<action name="cstService_*" class="cstServiceAction" method="{1}">
 				<result name="add_ok">index-ec.jsp</result>
 				<result name="todispatch_ok">/html/~cust/service/dispatch.jsp</result>
@@ -68,7 +77,6 @@
 				<result name="detailupdate2_ok" type="redirectAction">cstService_todispatch</result>
 				<result name="toarch_ok">/html/~cust/service/arch.jsp</result>
 				<result name="todetail3_ok">/html/~cust/service/detail.jsp</result>
-
 				<result name="salchancelist_success">/html/~sale/list.jsp</result>
 				<result name="salchancedelete_success" type="redirectAction">salchance_bypage</result>
 				<result name="salchancetoupdate_success">/html/~sale/edit.jsp</result>
@@ -76,13 +84,14 @@
 				<result name="salchanceupdate_error">/html/~sale/edit.jsp</result>
 			</action>
 			
+			
 			<!-- 客户管理 -->
 			<!-- 客户流失管理 -->
 			<action name="cstLost_*" class="cstLostAction" method="{1}">
 				<result name="byPage_success">/html/~cust/lost/list.jsp</result>
 				<result name="supersel_success">/html/~cust/lost/listDim.jsp</result>
-
 			</action>
+			
 			
 			<!-- 统计报表 -->
 			<action name="rept_*" class="reptAction" method="{1}">
@@ -90,6 +99,13 @@
 				<result name="rept_consSel">/html/~rept/cons.jsp</result>
 				<result name="rept_serSel">/html/~rept/ser.jsp</result>
 				<result name="rept_lostSel">/html/~rept/lost.jsp</result>
+			</action>
+			
+			
+			<!-- 基础数据 -->
+			<action name="basd_*" class="basdAction" method="{1}">
+				<result name="basd_product">/html/~basd/product.jsp</result>
+				<result name="basd_storage">/html/~basd/storage.jsp</result>
 			</action>
 		</package>
 </struts>

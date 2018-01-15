@@ -3,8 +3,8 @@
 
 <%@ page language="java"%> 
 <%@ page contentType="text/html; charset=utf-8"%> 
-<%@ page import="java.util.*"%> //获取系统时间必须导入的 
-<%@ page import="java.text.*"%> //获取系统时间必须导入的 
+<%@ page import="java.util.*"%> 
+<%@ page import="java.text.*"%>  
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>

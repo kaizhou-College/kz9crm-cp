@@ -17,7 +17,6 @@ public class SalPlan implements java.io.Serializable {
 	private String plaTodo;
 	private String plaResult;
 	private SalChance salChance;
-	// Constructors
 	public Integer getPlaId() {
 		return plaId;
 	}
@@ -42,7 +41,11 @@ public class SalPlan implements java.io.Serializable {
 	public void setPlaResult(String plaResult) {
 		this.plaResult = plaResult;
 	}
-	public SalPlan() {
+	public SalChance getSalChance() {
+		return salChance;
+	}
+	public void setSalChance(SalChance salChance) {
+		this.salChance = salChance;
 	}
 	public SalPlan(Integer plaId, Date plaDate, String plaTodo, String plaResult) {
 		super();
@@ -51,15 +54,14 @@ public class SalPlan implements java.io.Serializable {
 		this.plaTodo = plaTodo;
 		this.plaResult = plaResult;
 	}
+	public SalPlan() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
 		return "SalPlan [plaDate=" + plaDate + ", plaId=" + plaId
 				+ ", plaResult=" + plaResult + ", plaTodo=" + plaTodo + "]";
 	}
-	public SalChance getSalChance() {
-		return salChance;
-	}
-	public void setSalChance(SalChance salChance) {
-		this.salChance = salChance;
-	}
+	
 }

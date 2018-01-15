@@ -34,7 +34,7 @@ public class CstServiceAction {
 	private String svrDealBy;
 	private Date svrDealDate;
 	private String svrResult;
-	private Integer svrSatisfy;
+	private String svrSatisfy;
 	
 	private String aa;
 
@@ -418,11 +418,11 @@ public class CstServiceAction {
 		this.svrResult = svrResult;
 	}
 
-	public Integer getSvrSatisfy() {
+	public String getSvrSatisfy() {
 		return svrSatisfy;
 	}
 
-	public void setSvrSatisfy(Integer svrSatisfy) {
+	public void setSvrSatisfy(String svrSatisfy) {
 		this.svrSatisfy = svrSatisfy;
 	}
 

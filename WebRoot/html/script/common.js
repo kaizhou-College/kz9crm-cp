@@ -1,5 +1,16 @@
 function reload1(){
-	alert(1);
+	//alert(1);
+		$.ajax({
+		type:"POST",
+		url:"salPlan_superSel",
+		data:$("#froms").serialize(),
+		success:function(data){
+			$("#plan_list").html(data);
+		},
+		error:function(){
+			alert("ajax错误");
+		}
+	});
 }
 function help(msg){
 	alert('欢迎使用'+msg);
@@ -21,9 +32,9 @@ function add(url){
 	to(url);
 }
 function del(msg){
-	if (window.confirm("确认删除"+msg+"？")){
-		reload();
-		window.location.href="${basePath}html/salchance_delete?chcId="+2;
+	if (window.confirm("确认删除？")){
+		//reload();
+		window.location.href=msg;
 	}
 
 }
