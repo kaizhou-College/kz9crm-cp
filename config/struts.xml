@@ -54,6 +54,8 @@
 				<result name="toadd_ok">/html/~cust/cust/activities_add.jsp</result>
 				<result name="add_ok" type="redirectAction">cstCustomer_select</result>
 			</action>
+			
+			
 			<action name="orders_*" class="ordersAction" method="{1}">
 				<result name="select_ok">/html/~cust/cust/orders.jsp</result>
 			</action>
@@ -91,6 +93,10 @@
 			<action name="cstLost_*" class="cstLostAction" method="{1}">
 				<result name="byPage_success">/html/~cust/lost/list.jsp</result>
 				<result name="supersel_success">/html/~cust/lost/listDim.jsp</result>
+				<result name="toconfirm_ok">/html/~cust/lost/confirm.jsp</result>
+				<result name="torelay_ok">/html/~cust/lost/relay.jsp</result>
+				<result name="update1_ok" type="redirectAction">cstLost_byPage</result>
+				<result name="update2_ok" type="redirectAction">cstLost_byPage</result>
 			</action>
 			
 			
@@ -100,6 +106,8 @@
 				<result name="rept_consSel">/html/~rept/cons.jsp</result>
 				<result name="rept_serSel">/html/~rept/ser.jsp</result>
 				<result name="rept_lostSel">/html/~rept/lost.jsp</result>
+				<result name="superselect_ok">/html/~rept/lost.jsp</result>
+				
 			</action>
 			
 			
@@ -107,6 +115,8 @@
 			<action name="basd_*" class="basdAction" method="{1}">
 				<result name="basd_product">/html/~basd/product.jsp</result>
 				<result name="basd_storage">/html/~basd/storage.jsp</result>
+				<result name="superselect_ok">/html/~basd/storage.jsp</result>
+				<result name="superselect2_ok">/html/~basd/product.jsp</result>
 			</action>
 			<!-- 基础数据 -->
 			<action name="basDict_*" class="basDictAction" method="{1}">

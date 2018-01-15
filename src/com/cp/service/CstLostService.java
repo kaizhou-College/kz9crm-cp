@@ -16,5 +16,8 @@ public interface CstLostService {
 	//定时
 	void work();
 	void add(CstLost cstLost);
+	CstLost select(int lstId);
+	void update(int lstId, String lstReason);
+	void update2(int lstId, String lstDelay);
 
 }

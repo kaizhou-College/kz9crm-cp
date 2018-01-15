@@ -10,7 +10,7 @@ import com.cp.entity.BasDict;
 import com.cp.service.BasDictService;
 
 @Service
-public class BasDictServiceImol implements BasDictService {
+public class BasDictServiceImpl implements BasDictService {
 	
 	@Autowired
 	private BasDictDao basDictDao;

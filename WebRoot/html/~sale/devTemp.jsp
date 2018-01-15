@@ -29,7 +29,7 @@
 	<tr>
 		<th colspan="10" class="pager">
 			<div class="pager" >
-				<comcp:queryByPage count="${count}" pageIndex="${pageIndex}" pageSize="${pageSize}" pageMax="${pageMax}" pageUrl="${pageUrl}"></comcp:queryByPage>
+				<comcp:queryByPage count="${listpage.count}" pageIndex="${listpage.pageIndex}" pageSize="${listpage.pageSize}" pageMax="${listpage.pageMax}" pageUrl="${listpage.pageUrl}"></comcp:queryByPage>
 			</div>
 		</th>
 	</tr>

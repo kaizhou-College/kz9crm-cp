@@ -18,11 +18,11 @@
 	<mapping resource="com/cp/entity/SalChance.hbm.xml" />
 	<mapping resource="com/cp/entity/SalPlan.hbm.xml" />
 	<mapping resource="com/cp/entity/CstLinkman.hbm.xml" />
-	<mapping resource="com/cp/entity/CstService.hbm.xml" />
 	<mapping resource="com/cp/entity/Product.hbm.xml" />
 	<mapping resource="com/cp/entity/Storage.hbm.xml" />
 	<mapping resource="com/cp/entity/CstService.hbm.xml" />
 	<mapping resource="com/cp/entity/BasDict.hbm.xml" />
+	<mapping resource="com/cp/entity/CstCustomer.hbm.xml" />
 
 </session-factory>
 </hibernate-configuration>

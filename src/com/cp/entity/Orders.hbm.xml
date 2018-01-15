@@ -6,7 +6,7 @@
 -->
 <hibernate-mapping>
 
-    <class name="com.cp.entity.Orders" table="ORDERS" schema="PYJ">
+    <class name="com.cp.entity.Orders" table="ORDERS" >
         <id name="odrId" type="java.lang.Integer">
             <column name="ODR_ID" precision="22" scale="0" />
             <generator class="assigned" />

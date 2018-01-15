@@ -41,6 +41,14 @@ public class Product implements java.io.Serializable {
 
 	// Property accessors
 
+	@Override
+	public String toString() {
+		return "Product [prodBatch=" + prodBatch + ", prodId=" + prodId
+				+ ", prodMemo=" + prodMemo + ", prodName=" + prodName
+				+ ", prodPrice=" + prodPrice + ", prodType=" + prodType
+				+ ", prodUnit=" + prodUnit + "]";
+	}
+
 	public Integer getProdId() {
 		return this.prodId;
 	}

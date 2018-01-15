@@ -23,4 +23,6 @@ public interface ReptDao {
 
 	String queryByIds(Integer oddOrderId);
 
+	List superselect(CstLost cstLost, int pageIndex, int pageSize);
+
 }

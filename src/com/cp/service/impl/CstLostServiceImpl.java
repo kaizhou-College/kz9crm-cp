@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.cp.dao.CstLostDao;
 import com.cp.entity.CstLost;
 import com.cp.entity.CstLostTemp;
+import com.cp.entity.SalChance;
 import com.cp.service.CstLostService;
 @Service
 public class CstLostServiceImpl implements CstLostService{
@@ -56,5 +57,23 @@ public class CstLostServiceImpl implements CstLostService{
 	}
 	public void add(CstLost cstLost) {
 		cstLostDao.add(cstLost);
+	}
+
+	public CstLost select(int lstId) {
+		// TODO Auto-generated method stub
+		CstLost cstLost =(CstLost) cstLostDao.todispatch(lstId);
+		return cstLost;
+	}
+
+	public void update(int lstId, String lstReason) {
+		// TODO Auto-generated method stub
+		cstLostDao.update(lstId,lstReason);
+		
+	}
+
+	public void update2(int lstId, String lstDelay) {
+		// TODO Auto-generated method stub
+		cstLostDao.update2(lstId,lstDelay);
+		
 	}
 }

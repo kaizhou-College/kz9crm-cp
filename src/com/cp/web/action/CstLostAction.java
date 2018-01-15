@@ -33,6 +33,13 @@ public class CstLostAction {
 	private String pageUrl;//传进来的路径
 	private int pageMax;//最大页数
 	private int page;//初始页数
+	
+	
+	
+	private int lstId;
+	private String lstReason;
+	private String lstDelay;
+	
 	//分页查询
 	public String byPage(){
 		//System.out.println("进来");
@@ -78,8 +85,70 @@ public class CstLostAction {
 		listcstLost = cstLostService.superbyPage(cstLostTemp,page, pageSize);//带分页
 		return"supersel_success";
 	}
+	
+	public String toconfirm(){
+		System.out.println(lstId);
+		cstLost=cstLostService.select(lstId);
+		return "toconfirm_ok";
+	}
+	
+	public String torelay(){
+		System.out.println(lstId);
+		cstLost=cstLostService.select(lstId);
+		return "torelay_ok";
+		
+	}
+	
+	
+	public String update1(){
+		System.out.println(lstId);
+		System.out.println(lstReason);
+		cstLostService.update(lstId,lstReason);
+		return "update1_ok";
+		
+	}
+	
+	public String update2(){
+		System.out.println(lstId);
+		cstLostService.update2(lstId,lstDelay);
+		return "update2_ok";
+		
+	}
+	
+	
+	
 
-//get/set
+public String getLstDelay() {
+		return lstDelay;
+	}
+
+
+	public void setLstDelay(String lstDelay) {
+		this.lstDelay = lstDelay;
+	}
+
+
+public String getLstReason() {
+		return lstReason;
+	}
+
+
+	public void setLstReason(String lstReason) {
+		this.lstReason = lstReason;
+	}
+
+
+public int getLstId() {
+		return lstId;
+	}
+
+
+	public void setLstId(int lstId) {
+		this.lstId = lstId;
+	}
+
+
+	//get/set
 	public CstLost getCstLost() {
 		return cstLost;
 	}

@@ -9,9 +9,8 @@
 		<td class="list_data_text"><s:property value="#listcstLost.lstLostDate"/></td>
 		<td class="list_data_text">暂缓流失</td>
 		<td class="list_data_op">
-			<img onclick="to('confirm.html');" title="确认流失" src="${basePath}/html/images/bt_confirm.gif" class="op_button" />
-			<img onclick="to('relay.html');" title="暂缓流失" src="${basePath}/html/images/bt_relay.gif" class="op_button" />
-			
+			<img onclick="to('${basePath}html/cstLost_toconfirm?lstId=<s:property value="#listcstLost.lstId"/>');" title="确认流失" src="${basePath}/html/images/bt_confirm.gif" class="op_button" />
+			<img onclick="to('${basePath}html/cstLost_torelay?lstId=<s:property value="#listcstLost.lstId"/>');" title="暂缓流失" src="${basePath}/html/images/bt_relay.gif" class="op_button" />
 		</td>
 	</tr>
 	</s:iterator>

@@ -18,4 +18,10 @@ public interface CstLostDao {
 	void add(CstLost cstLost);
 
 	List<CstLost> CheckOutTime();
+
+	CstLost todispatch(int lstId);
+
+	void update(int lstId, String lstReason);
+
+	void update2(int lstId, String lstDelay);
 }
