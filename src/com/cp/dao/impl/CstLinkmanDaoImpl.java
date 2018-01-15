@@ -37,6 +37,7 @@ public class CstLinkmanDaoImpl extends HibernateDaoSupport  implements CstLinkma
 		Session session=this.getSession();
 		CstLinkman cstLinkman=new CstLinkman();
 		cstLinkman.setLkmId(lkmId);
+		cstLinkman.setCstCustomer(null);
 		session.delete(cstLinkman);
 		System.out.println("删除成功");
 		

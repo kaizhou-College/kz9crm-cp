@@ -8,6 +8,8 @@ import org.hibernate.criterion.Projections;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.cp.dao.BasdDao;
+import org.hibernate.criterion.Restrictions;
+import com.cp.entity.CstService;
 import com.cp.entity.Product;
 import com.cp.entity.Storage;
 
@@ -54,4 +56,62 @@ public class BasdDaoImpl extends HibernateDaoSupport implements BasdDao{
 		return list;
 	}
 
+	public List superselect(Storage storage, int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		Session session = this.getSession();
+		int max=(pageIndex-1)*pageSize;
+		Criteria createCriteria = session.createCriteria(Storage.class);
+		
+		System.out.println(storage);
+		if(storage.getStkProdId()!=null){
+			createCriteria.add(Restrictions.eq("stkProdId",+storage.getStkProdId()));
+		}
+		
+		
+		if(BasdDaoImpl.isNOtNull(storage.getStkWarehouse())){
+			createCriteria.add(Restrictions.like("stkWarehouse","%"+storage.getStkWarehouse()+"%"));
+		}
+		
+		createCriteria.setFirstResult(max);
+		createCriteria.setMaxResults(pageSize);
+		List list = createCriteria.list();
+		System.out.println("高级查询的list"+list);
+		return list;
+	}
+	
+	
+	private static boolean isNOtNull(String str){
+		boolean isNotNull=false;
+		if(str.trim().length()>0){
+			isNotNull=true;
+		}
+		return isNotNull;
+	}
+
+	public List superselect2(Product product, int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		System.out.println("这里高级查询");
+		Session session = this.getSession();
+		int max=(pageIndex-1)*pageSize;
+		Criteria createCriteria = session.createCriteria(Product.class);
+		
+		System.out.println(product);
+		
+		
+		if(BasdDaoImpl.isNOtNull(product.getProdName())){
+			createCriteria.add(Restrictions.like("prodName","%"+product.getProdName()+"%"));
+		}
+		if(BasdDaoImpl.isNOtNull(product.getProdType())){
+			createCriteria.add(Restrictions.like("prodType","%"+product.getProdType()+"%"));
+		}
+		if(BasdDaoImpl.isNOtNull(product.getProdBatch())){
+			createCriteria.add(Restrictions.like("prodBatch","%"+product.getProdBatch()+"%"));
+		}
+		
+		createCriteria.setFirstResult(max);
+		createCriteria.setMaxResults(pageSize);
+		List list = createCriteria.list();
+		System.out.println("高级查询的list"+list);
+		return list;
+	}	
 }

@@ -8,20 +8,21 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="${basePath}html/rept_superselect" method="post">
 <div class="page_title">客户流失分析</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="reload();">查询</button> 
+	<input class="common_button" type="submit" value="查询"/> 
 	</div>
 	<table class="query_form_table" border="0" cellPadding="3" cellSpacing="0">
 			<tr>
 					<th>客户名称</th>
-						<td><input type="text" name="item.lstCustName" value=""></td>
+						<td><input type="text" name="cstLost.lstCustName" value="<s:property value="cstLost.lstCustName"/>"></td>
 					<th>客户经理</th>
-						<td><input type="text" name="item.lstCustManagerName" value=""></td>
+						<td><input type="text" name="cstLost.lstCustManagerName" value="<s:property value="cstLost.lstCustManagerName"/>"></td>
 			</tr>
 	</table>
+	</form>
 		<br />
 	<table class="data_list_table">
 		<tr>

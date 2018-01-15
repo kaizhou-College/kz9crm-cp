@@ -36,7 +36,7 @@
         </property>
         <property name="svrCreateDate" type="java.util.Date">
             <column name="SVR_CREATE_DATE" length="7"  />
-	</property>
+		</property>
         <property name="svrDueId" type="java.lang.Integer">
             <column name="SVR_DUE_ID" precision="22" scale="0" />
         </property>

@@ -48,4 +48,10 @@
 		<column name="SVR_SATISFY" type="java.lang.Integer"></column>
 		<column name="SVR_DEAL_DATE" type="java.util.Date"></column>
 	</table>
+	<table name="BAS_DICT" schema="CRM">
+		<primary-key>
+			<key-column name="DICT_ID" type="java.lang.Integer" />
+		</primary-key>
+		<column name="DICT_IS_EDITABLE" type="java.lang.Integer"></column>
+	</table>
 </hibernate-reverse-engineering>

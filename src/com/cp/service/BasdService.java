@@ -15,4 +15,8 @@ public interface BasdService {
 
 	List<Storage> byStoragePage(int pageIndex, int pageSize);
 
+	List<Storage> superselect(Storage storage, int pageIndex, int pageSize);
+
+	List<Product> superselect2(Product product, int pageIndex, int pageSize);
+
 }

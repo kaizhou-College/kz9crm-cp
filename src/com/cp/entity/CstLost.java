@@ -96,6 +96,8 @@ public class CstLost implements java.io.Serializable {
 		this.lstLastOrderDate = date;
 	}
 
+
+
 	public Date getLstLostDate() {
 		return this.lstLostDate;
 	}

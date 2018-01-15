@@ -8,5 +8,9 @@ public interface OrdersService {
 
 	List select(Class class1);
 
+	long count();
+
+	List<Orders> byPage(int pageIndex, int pageSize);
+
 
 }

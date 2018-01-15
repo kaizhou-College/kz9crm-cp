@@ -36,4 +36,18 @@ public class BasdServiceImpl implements BasdService{
 		return list;
 	}
 
+	public List<Storage> superselect(Storage storage, int pageIndex,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		List list=basdDao.superselect(storage, pageIndex, pageSize);
+		return list;
+	}
+
+	public List<Product> superselect2(Product product, int pageIndex,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		List list=basdDao.superselect2(product, pageIndex, pageSize);
+		return list;
+	}
+
 }

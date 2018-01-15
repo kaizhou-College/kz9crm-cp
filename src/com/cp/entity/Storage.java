@@ -21,6 +21,14 @@ public class Storage implements java.io.Serializable {
 	public Storage() {
 	}
 
+	@Override
+	public String toString() {
+		return "Storage [stkCount=" + stkCount + ", stkId=" + stkId
+				+ ", stkMemo=" + stkMemo + ", stkProdId=" + stkProdId
+				+ ", stkWare=" + stkWare + ", stkWarehouse=" + stkWarehouse
+				+ "]";
+	}
+
 	/** minimal constructor */
 	public Storage(Integer stkProdId, String stkWarehouse, String stkWare,
 			Integer stkCount) {

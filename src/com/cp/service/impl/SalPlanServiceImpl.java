@@ -34,7 +34,10 @@ public class SalPlanServiceImpl implements SalPlanService{
 	public void planSuccess(SalChance salChance) {
 		salPlanDao.planSuccess(salChance);
 	}
-	//执行计划时de显示
+/*	public long count() {
+		Long count = salPlanDao.count();
+		return count;
+	}*/
 	public SalChance planList(Integer chcId) {
 		SalChance planList = salPlanDao.planList(chcId);
 		return planList;
@@ -65,6 +68,4 @@ public class SalPlanServiceImpl implements SalPlanService{
 		System.out.println("biz高级一共"+superCount);
 		return superCount;
 	}
-	
-
 }

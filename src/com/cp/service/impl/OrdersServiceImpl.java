@@ -24,5 +24,19 @@ public class OrdersServiceImpl implements OrdersService {
 	}
 
 
+	public long count() {
+		// TODO Auto-generated method stub
+		long count = ordersDao.count();
+		return count;
+	}
+
+
+	public List<Orders> byPage(int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		List list =ordersDao.bypage(pageIndex, pageSize);
+		return list;
+	}
+
+
 
 }

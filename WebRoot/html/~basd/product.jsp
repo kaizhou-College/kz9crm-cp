@@ -8,22 +8,23 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="${basePath}html/basd_superselect2" method="post">
 <div class="page_title">产品查询</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="reload();">查询</button>  
+	<input class="common_button" type="submit" value="查询"/> 
 </div>
 <table class="query_form_table">
 	<tr>
 		<th>名称</th>
-		<td><input /></td>
+		<td><input name="product.prodName" value="<s:property value="product.prodName"/>"/></td>
 		<th>型号</th>
-		<td><input /></td>
+		<td><input name="product.prodType" value="<s:property value="product.prodType"/>"/></td>
 		<th>批次</th>
-		<td><input /></td>
+		<td><input name="product.prodBatch" value="<s:property value="product.prodBatch"/>"/></td>
 	</tr>
 </table>
+</form>
 <br />
 <table class="data_list_table">
 	<tr>

@@ -8,6 +8,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.cp.dao.SalChanceDao;
@@ -95,12 +96,60 @@ public class SalChanceDaoImpl extends HibernateDaoSupport implements SalChanceDa
 		List list = createCriteria.list();
 		return list;
 	}
-	public Long count() {
+/*	public Long count() {
 		Session session = this.getSession();
 		Criteria createCriteria = session.createCriteria(SalChance.class);
 		//加投影
 		createCriteria.setProjection(Projections.count("chcId"));
 		List<Long> list = createCriteria.list();
 		return  list.get(0);
+	}*/
+//	public Long count() {
+//		Session session = this.getSession();
+//		Criteria createCriteria = session.createCriteria(SalChance.class);
+//		//加投影
+//		createCriteria.setProjection(Projections.count("chcId"));
+//		List<Long> list = createCriteria.list();
+//		return  list.get(0);
+//	}
+	//高级查询最大值
+	public long count() {
+		Session session = this.getSession();
+		List<Object> list = session.createCriteria(SalChance.class).list();
+		return  list.size();
 	}
+	
+	//高级查询
+	public List superselect(SalChance salChance, int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		Session session = this.getSession();
+		int max=(pageIndex-1)*pageSize;
+		Criteria createCriteria = session.createCriteria(SalChance.class);
+		
+		System.out.println("在啊啊啊啊啊阿");
+		System.out.println(salChance);
+		if(SalChanceDaoImpl.isNOtNull(salChance.getChcCustName())){
+			createCriteria.add(Restrictions.like("chcCustName","%"+salChance.getChcCustName()+"%"));
+		}
+		if(SalChanceDaoImpl.isNOtNull(salChance.getChcTitle())){
+			createCriteria.add(Restrictions.like("chcTitle","%"+salChance.getChcTitle()+"%"));
+		}
+		if(SalChanceDaoImpl.isNOtNull(salChance.getChcLinkman())){
+			createCriteria.add(Restrictions.like("chcLinkman","%"+salChance.getChcLinkman()+"%"));
+		}
+		createCriteria.setFirstResult(max);
+		createCriteria.setMaxResults(pageSize);
+		List list = createCriteria.list();
+		System.out.println("高级查询的list"+list);
+		return list;
+	}
+	
+	private static boolean isNOtNull(String str){
+		boolean isNotNull=false;
+		if(str.trim().length()>0){
+			isNotNull=true;
+		}
+		return isNotNull;
+	}	
+	
 }

@@ -18,4 +18,6 @@ public interface CstCustomerDao {
 
 	int count();
 
+	List superselect(CstCustomer cstCustomer, int pageIndex, int pageSize);
+
 }

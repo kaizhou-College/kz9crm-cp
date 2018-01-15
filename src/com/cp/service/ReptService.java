@@ -23,4 +23,6 @@ public interface ReptService {
 	List<OrdersLine> conteSelect();
 
 	String queryByIds(Integer oddOrderId);
+
+	List<CstLost> superselect(CstLost cstLost, int pageIndex, int pageSize);
 }

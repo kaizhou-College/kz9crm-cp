@@ -14,6 +14,7 @@ import com.cp.entity.CstCustomer;
 import com.cp.entity.CstLost;
 import com.cp.entity.CstLostTemp;
 import com.cp.entity.Orders;
+import com.cp.entity.SalChance;
 
 public class CstLostDaoImpl extends HibernateDaoSupport implements CstLostDao{
 	public boolean isNotNuhll(String str){
@@ -107,5 +108,40 @@ public class CstLostDaoImpl extends HibernateDaoSupport implements CstLostDao{
 	public void add(CstLost cstLost) {
 		Session session = this.getSession();
 		session.save(cstLost);
+	}
+	public CstLost todispatch(int lstId) {
+		// TODO Auto-generated method stub
+		System.out.println("进入了DaoImpl");
+		Session session  = this.getSession();
+		
+		CstLost cstLost = (CstLost) session.get(CstLost.class, lstId);
+		System.out.println(cstLost);
+		System.out.println("完成");
+		
+		return cstLost;
+	}
+	public void update(int lstId, String lstReason) {
+		// TODO Auto-generated method stub
+		System.out.println("进入了DaoImpl");
+		Session session  = this.getSession();
+		
+		CstLost cst = (CstLost) session.get(CstLost.class, lstId);
+		CstLost cstLost=new CstLost();
+		cst.setLstReason(lstReason);
+		cst.setLstStatus("3");
+		System.out.println("完成");
+		
+	}
+	public void update2(int lstId, String lstDelay) {
+		// TODO Auto-generated method stub
+		System.out.println("进入了DaoImpl");
+		Session session  = this.getSession();
+		
+		CstLost cst = (CstLost) session.get(CstLost.class, lstId);
+		CstLost cstLost=new CstLost();
+		cst.setLstDelay(lstDelay);
+		cst.setLstStatus("2");
+		System.out.println("完成");
+		
 	}
 }

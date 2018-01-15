@@ -38,6 +38,8 @@ public class CstServiceAction {
 	
 	private String aa;
 
+	private Date date1;
+	private Date date2;
 	
 	
 	
@@ -62,7 +64,7 @@ public class CstServiceAction {
 	private ListPage listpage;
 	private int pageIndex;
 	private static final int PAGE_CUSTOMER_INDEX=1;
-	private static final int PAGE_CUSTOMER_SIZE=2;
+	private static final int PAGE_CUSTOMER_SIZE=5;
 	
 	
 	//添加
@@ -258,9 +260,140 @@ public class CstServiceAction {
 	}
 		
 	
+	//高级查询
+	public String superselect1(){
+		
+		System.out.println("进入了高级查询");
+		System.out.println(cstService);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("cstService_superselect");//跳转路径
+		listpage.setCount(cstServiceService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		System.out.println("第"+listpage.getPageIndex()+"页");
+		System.out.println("有"+listpage.getPageMax()+"页");	
+		System.out.println("有"+listpage.getCount()+"条记录");	
+		
+		cstServicelist=cstServiceService.superselect(cstService,date1,date2,listpage.getPageIndex(), listpage.getPageSize());
+		
+		return "superselect1_ok";
+	}
+	
+public String superselect2(){
+		
+		System.out.println("进入了高级查询");
+		System.out.println(cstService);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("cstService_superselect");//跳转路径
+		listpage.setCount(cstServiceService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		System.out.println("第"+listpage.getPageIndex()+"页");
+		System.out.println("有"+listpage.getPageMax()+"页");	
+		System.out.println("有"+listpage.getCount()+"条记录");	
+		
+		cstServicelist=cstServiceService.superselect(cstService,date1,date2,listpage.getPageIndex(), listpage.getPageSize());
+		
+		return "superselect2_ok";
+	}
+
+
+public String superselect3(){
+	
+	System.out.println("进入了高级查询");
+	System.out.println(cstService);
+	
+	if(pageIndex==0){
+		listpage=new ListPage();
+		listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+		
+	}else{
+		listpage=new ListPage();
+		listpage.setPageIndex(pageIndex);
+	}
+	listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+	listpage.setPageUrl("cstService_superselect");//跳转路径
+	listpage.setCount(cstServiceService.count());//一共多少条数据
+	int max=new Long(listpage.getCount()).intValue();
+	listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+	
+	System.out.println("第"+listpage.getPageIndex()+"页");
+	System.out.println("有"+listpage.getPageMax()+"页");	
+	System.out.println("有"+listpage.getCount()+"条记录");	
+	
+	cstServicelist=cstServiceService.superselect(cstService,date1,date2,listpage.getPageIndex(), listpage.getPageSize());
+	
+	return "superselect3_ok";
+}
+
+
+public String superselect4(){
+	
+	System.out.println("进入了高级查询");
+	System.out.println(cstService);
+	
+	if(pageIndex==0){
+		listpage=new ListPage();
+		listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+		
+	}else{
+		listpage=new ListPage();
+		listpage.setPageIndex(pageIndex);
+	}
+	listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+	listpage.setPageUrl("cstService_superselect");//跳转路径
+	listpage.setCount(cstServiceService.count());//一共多少条数据
+	int max=new Long(listpage.getCount()).intValue();
+	listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+	
+	System.out.println("第"+listpage.getPageIndex()+"页");
+	System.out.println("有"+listpage.getPageMax()+"页");	
+	System.out.println("有"+listpage.getCount()+"条记录");	
+	
+	cstServicelist=cstServiceService.superselect(cstService,date1,date2,listpage.getPageIndex(), listpage.getPageSize());
+	
+	return "superselect4_ok";
+}
 	
 	
 	
+	
+
+	public Date getDate1() {
+		return date1;
+	}
+
+	public void setDate1(Date date1) {
+		this.date1 = date1;
+	}
+
+	public Date getDate2() {
+		return date2;
+	}
+
+	public void setDate2(Date date2) {
+		this.date2 = date2;
+	}
 
 	public ListPage getListpage() {
 		return listpage;

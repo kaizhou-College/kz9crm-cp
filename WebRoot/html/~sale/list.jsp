@@ -8,23 +8,23 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-<form action="${basePath}html/salchance_superselect">
+<form action="${basePath}html/salchance_superselect" method="post">
 <div class="page_title">销售机会管理</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="to('add.jsp');">新建</button>  
-	<button class="common_button" type="submit">查询</button> 
+	<input type="button" value="新建" class="common_button" onclick="to('${basePath}html/~sale/add.jsp');"/>  
+	<input class="common_button" type="submit" value="查询"/> 
 	</div>
 	
 <table class="query_form_table">
 	<tr>
 		<th>客户名称</th>
-		<td><input /></td>
+		<td><input name="salChance.chcCustName" value=""<s:property value="salChance.chcCustName"/>/></td>
 		<th>概要</th>
-		<td><input /></td>
+		<td><input name="salChance.chcTitle" value="<s:property value="salChance.chcTitle"/>"/></td>
 		<th>联系人</th>
 		<td>
-			<input name="T1" size="20" />
+			<input name="salChance.chcLinkman" size="20" value="<s:property value="salChance.chcLinkman"/>"/>
 		</td>
 	</tr>
 	</table>
@@ -52,10 +52,9 @@
 			
 			<img onclick="to('${basePath}html/salchance_toupdate?salChance.chcId='+<s:property value="#listsalChance.chcId"/>);" title="编辑" src="${basePath}/html/images/bt_edit.gif" class="op_button" />
 
-			<img onclick="to('${basePath}html/salchance_todispatch');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
+			<img onclick="to('${basePath}html/salchance_todispatch?chcId=<s:property value="#listsalChance.chcId"/>');" title="指派" src="${basePath}/html/images/bt_linkman.gif" class="op_button" />
 			
-			
-			<img onclick="del('${basePath}html/salchance_delete?chcId=<s:property value="#listsalChance.chcId"/>');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" /
+			<img onclick="to('${basePath}html/salchance_delete?chcId=<s:property value="#listsalChance.chcId"/>');" id="chance_del" title="删除" src="${basePath}/html/images/bt_del.gif" class="op_button" />
 			
 		</td>
 	</tr>

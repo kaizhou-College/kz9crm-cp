@@ -8,30 +8,23 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="">
 <div class="page_title">客户贡献分析</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="reload();">查询</button> 
+	<input class="common_button" type="submit" value="查询"/> 
 	</div>
 <table class="query_form_table">
 	<tr>
 		<th>客户名称</th>
-		<td><input /></td>
+		<td><input name=""/></td>
 		<th>年份</th>
 		<td>
-			<select>
-				<option>全部</option>
-				<option>2005</option>
-				<option>2006</option>
-				<option>2007</option>
-				<option>2008</option>
-				<option>2009</option>
-				<option>2010</option>
-			</select>
+		<s:select list="{'2005','2006','2007','2008','2009','2010'}" name=""></s:select>
 		</td>
 	</tr>
 	</table>
+	</form>
 <br />
 <table class="data_list_table">
 	<tr>

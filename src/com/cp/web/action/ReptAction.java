@@ -31,7 +31,12 @@ public class ReptAction {
 	private ListPage listpage;
 	private int pageIndex;
 	private static final int PAGE_CUSTOMER_INDEX=1;
-	private static final int PAGE_CUSTOMER_SIZE=1;
+	private static final int PAGE_CUSTOMER_SIZE=5;
+	
+	
+	private CstLost cstLost;
+	
+	
 	//贡献分析查询
 	public String contrSel(){
 		listordersLine = reptService.conteSelect();
@@ -80,6 +85,45 @@ public class ReptAction {
 	}
 	//get/set
 	
+	
+	//高级查询
+	public String superselect(){
+		
+		System.out.println("进入了高级查询");
+		System.out.println(cstLost);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("rept_superselect");//跳转路径
+		listpage.setCount(reptService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		System.out.println("第"+listpage.getPageIndex()+"页");
+		System.out.println("有"+listpage.getPageMax()+"页");	
+		System.out.println("有"+listpage.getCount()+"条记录");	
+		
+		listcstLost=reptService.superselect(cstLost,listpage.getPageIndex(), listpage.getPageSize());
+		
+		return "superselect_ok";
+	}
+	
+	
+	
+	
+	public CstLost getCstLost() {
+		return cstLost;
+	}
+	public void setCstLost(CstLost cstLost) {
+		this.cstLost = cstLost;
+	}
 	public List<CstCustomer> getListcstCustomer() {
 		return listcstCustomer;
 	}

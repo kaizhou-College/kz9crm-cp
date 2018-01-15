@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.cp.entity.CstActivity;
+import com.cp.entity.ListPage;
 import com.cp.entity.Orders;
 import com.cp.service.OrdersService;
 
@@ -28,10 +29,53 @@ public class OrdersAction {
 	private List<Orders> orderslist;
 	
 	
+	//分页用到的
+	private ListPage listpage;
+	private int pageIndex;
+	private static final int PAGE_CUSTOMER_INDEX=1;//第几页
+	private static final int PAGE_CUSTOMER_SIZE=3;//每页有多少
+	
 	public String select(){
-		orderslist=ordersService.select(Orders.class);
-		System.out.println(orderslist);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("orders_select");//跳转路径
+		listpage.setCount(ordersService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		orderslist = ordersService.byPage(listpage.getPageIndex(), listpage.getPageSize());
+		
+		
 		return "select_ok";
+	}
+
+
+	public ListPage getListpage() {
+		return listpage;
+	}
+
+
+	public void setListpage(ListPage listpage) {
+		this.listpage = listpage;
+	}
+
+
+	public int getPageIndex() {
+		return pageIndex;
+	}
+
+
+	public void setPageIndex(int pageIndex) {
+		this.pageIndex = pageIndex;
 	}
 
 

@@ -21,10 +21,11 @@ public interface SalPlanDao {
 	void salPlanDel(SalPlan salplan);
 //添加
 	void salPlanAdd(SalChance salChance, SalPlan salplan);
-//保存
-	void ajaxPlan(SalPlan salplan);
 //高级
 	Long superCount(SalPlanTemp salPlanTemp);
 	List superByPage(SalPlanTemp salPlanTemp, int page, int pageSize);
+
+//保存
+		void ajaxPlan(SalPlan salplan);
 
 }

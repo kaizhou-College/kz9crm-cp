@@ -42,6 +42,12 @@ public class ReptServiceImpl implements ReptService{
 	public String queryByIds(Integer oddOrderId) {
 		return reptDao.queryByIds(oddOrderId);
 	}
+	public List<CstLost> superselect(CstLost cstLost, int pageIndex,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		List list=reptDao.superselect(cstLost, pageIndex, pageSize);
+		return list;
+	}
 
 
 }

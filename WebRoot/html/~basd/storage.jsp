@@ -8,22 +8,23 @@
 <script src="${basePath}/html/script/common.js"></script>
 </head>
 <body>
-
+<form action="${basePath}html/basd_superselect" method="post">
 <div class="page_title">产品查询</div>
 <div class="button_bar">
 	<button class="common_button" onclick="help('');">帮助</button>
-	<button class="common_button" onclick="reload();">查询</button>  
+	<input type="submit" class="common_button" onclick="reload();" value="查询">
 </div>
 <table class="query_form_table">
 	<tr>
 		<th>产品</th>
-		<td><input /></td>
+		<td><input name="storage.stkProdId" value="<s:property value="storage.stkProdId"/>"/></td>
 		<th>仓库</th>
-		<td><input /></td>
+		<td><input name="storage.stkWarehouse" value="<s:property value="storage.stkWarehouse"/>"/></td>
 		<th>&nbsp;</th>
 		<td>&nbsp;</td>
 	</tr>
 </table>
+</form>
 <br />
 <table class="data_list_table">
 	<tr>

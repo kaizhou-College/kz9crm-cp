@@ -31,12 +31,12 @@ function add(url){
 	//alert('新建成功！');
 	to(url);
 }
-function del(msg){
-	if (window.confirm("确认删除？")){
-		//reload();
-		window.location.href=msg;
-	}
 
+function del(url){
+	if (window.confirm("确认删除？")){
+		alert("确认了");
+		to(url);
+	}
 }
 function setCurTime(oid){
 	var now=new Date();

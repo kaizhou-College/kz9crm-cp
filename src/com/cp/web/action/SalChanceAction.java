@@ -43,7 +43,6 @@ public class SalChanceAction {
 	
 	private List<SalChance> listsalChance;
 	private SalChance salChance;
-	
 	//查
 	public String bypage(){
 		//System.out.println("劲来了了~~~~~");
@@ -85,9 +84,10 @@ public class SalChanceAction {
 	
 	//去dispatch页面
 	public String todispatch(){
-		//System.out.println("进入了SalChanceAction");
-		salChance=salChanceService.todispatch(1);
-		//System.out.println("这里是Action"+salChance);
+		System.out.println("进入了SalChanceAction");
+		System.out.println(chcId);
+		salChance=salChanceService.todispatch(chcId);
+		System.out.println("这里是Action"+salChance);
 		return "todispatch_ok";
 	}
 	
@@ -133,14 +133,36 @@ public class SalChanceAction {
 	
 	//高级查询
 	public String superselect(){
-	//	System.out.println("进入了高级查询");
+		System.out.println("进入了高级查询");
+		System.out.println(salChance);
+		
+		if(pageIndex==0){
+			listpage=new ListPage();
+			listpage.setPageIndex(PAGE_CUSTOMER_INDEX);
+			
+		}else{
+			listpage=new ListPage();
+			listpage.setPageIndex(pageIndex);
+		}
+		listpage.setPageSize(PAGE_CUSTOMER_SIZE);
+		listpage.setPageUrl("salchance_superselect");//跳转路径
+		listpage.setCount(salChanceService.count());//一共多少条数据
+		int max=new Long(listpage.getCount()).intValue();
+		listpage.setPageMax(((max-1)/listpage.getPageSize())+1);//多少页
+		
+		System.out.println("第"+listpage.getPageIndex()+"页");
+		System.out.println("有"+listpage.getPageMax()+"页");	
+		System.out.println("有"+listpage.getCount()+"条记录");	
+		
+		listsalChance=salChanceService.superselect(salChance,listpage.getPageIndex(), listpage.getPageSize());
+		
 		return "superselect_ok";
 	}
+
+
+
 	
 	
-	
-	
-	//get/set
 	public Integer getChcId() {
 		return chcId;
 	}

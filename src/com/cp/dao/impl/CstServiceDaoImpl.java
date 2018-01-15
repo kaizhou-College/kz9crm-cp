@@ -1,14 +1,17 @@
 package com.cp.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.cp.dao.CstLinkmanDao;
 import com.cp.dao.CstServiceDao;
+import com.cp.entity.BasDict;
 import com.cp.entity.CstCustomer;
 import com.cp.entity.CstLinkman;
 import com.cp.entity.CstService;
@@ -105,6 +108,51 @@ public class CstServiceDaoImpl extends HibernateDaoSupport  implements CstServic
 		cst.setSvrSatisfy(cstService.getSvrSatisfy());
 		System.out.println("修改成功2");
 		
+	}
+	
+	private static boolean isNOtNull(String str){
+		boolean isNotNull=false;
+		if(str.trim().length()>0){
+			isNotNull=true;
+		}
+		return isNotNull;
+	}	
+
+	
+
+	public List superselect(CstService cstService, Date date1, Date date2,
+			int pageIndex, int pageSize) {
+		// TODO Auto-generated method stub
+		Session session = this.getSession();
+		int max=(pageIndex-1)*pageSize;
+		Criteria createCriteria = session.createCriteria(CstService.class);
+		
+		System.out.println("在啊啊啊啊啊阿");
+		System.out.println(cstService);
+		if(CstServiceDaoImpl.isNOtNull(cstService.getSvrCustName())){
+			createCriteria.add(Restrictions.like("svrCustName","%"+cstService.getSvrCustName()+"%"));
+		}
+		if(CstServiceDaoImpl.isNOtNull(cstService.getSvrTitle())){
+			createCriteria.add(Restrictions.like("svrTitle","%"+cstService.getSvrTitle()+"%"));
+		}
+		if(CstServiceDaoImpl.isNOtNull(cstService.getSvrType())){
+			createCriteria.add(Restrictions.like("svrType","%"+cstService.getSvrType()+"%"));
+		}
+		if(CstServiceDaoImpl.isNOtNull(cstService.getSvrStatus())){
+			createCriteria.add(Restrictions.like("svrStatus","%"+cstService.getSvrStatus()+"%"));
+		}
+		
+		System.out.println(date1);
+		System.out.println(date2);
+		if(date1!=null&&date2!=null){
+			createCriteria.add(Restrictions.between("svrCreateDate",date1,date2));
+		}
+		
+		createCriteria.setFirstResult(max);
+		createCriteria.setMaxResults(pageSize);
+		List list = createCriteria.list();
+		System.out.println("高级查询的list"+list);
+		return list;
 	}
 
 
