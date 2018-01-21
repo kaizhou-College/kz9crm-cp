@@ -48,9 +48,23 @@ public class CstCustomer implements java.io.Serializable {
 	private Set<CstLost> cstLost =new HashSet<CstLost>();
 	private Set<Orders> orders=new HashSet<Orders>();
 	
-	public CstCustomer() {
-		super();
-		// TODO Auto-generated constructor stub
+	
+	@Override
+	public String toString() {
+		return "CstCustomer [custAddr=" + custAddr + ", custBank=" + custBank
+				+ ", custBankAccount=" + custBankAccount + ", custBankroll="
+				+ custBankroll + ", custChieftain=" + custChieftain
+				+ ", custCredit=" + custCredit + ", custFax=" + custFax
+				+ ", custLevel=" + custLevel + ", custLevelLabel="
+				+ custLevelLabel + ", custLicenceNo=" + custLicenceNo
+				+ ", custLocalTaxNo=" + custLocalTaxNo + ", custManagerId="
+				+ custManagerId + ", custManagerName=" + custManagerName
+				+ ", custName=" + custName + ", custNationalTaxNo="
+				+ custNationalTaxNo + ", custNo=" + custNo + ", custRegion="
+				+ custRegion + ", custSatisfy=" + custSatisfy + ", custStatus="
+				+ custStatus + ", custTel=" + custTel + ", custTurnover="
+				+ custTurnover + ", custWebsite=" + custWebsite + ", custZip="
+				+ custZip + "]";
 	}
 	public CstCustomer(String custNo, String custName, String custRegion,
 			Integer custManagerId, String custManagerName, Integer custLevel,
@@ -84,23 +98,6 @@ public class CstCustomer implements java.io.Serializable {
 		this.custLocalTaxNo = custLocalTaxNo;
 		this.custNationalTaxNo = custNationalTaxNo;
 		this.custStatus = custStatus;
-	}
-	@Override
-	public String toString() {
-		return "CstCustomer [custAddr=" + custAddr + ", custBank=" + custBank
-				+ ", custBankAccount=" + custBankAccount + ", custBankroll="
-				+ custBankroll + ", custChieftain=" + custChieftain
-				+ ", custCredit=" + custCredit + ", custFax=" + custFax
-				+ ", custLevel=" + custLevel + ", custLevelLabel="
-				+ custLevelLabel + ", custLicenceNo=" + custLicenceNo
-				+ ", custLocalTaxNo=" + custLocalTaxNo + ", custManagerId="
-				+ custManagerId + ", custManagerName=" + custManagerName
-				+ ", custName=" + custName + ", custNationalTaxNo="
-				+ custNationalTaxNo + ", custNo=" + custNo + ", custRegion="
-				+ custRegion + ", custSatisfy=" + custSatisfy + ", custStatus="
-				+ custStatus + ", custTel=" + custTel + ", custTurnover="
-				+ custTurnover + ", custWebsite=" + custWebsite + ", custZip="
-				+ custZip + "]";
 	}
 	public String getCustNo() {
 		return custNo;
@@ -269,6 +266,10 @@ public class CstCustomer implements java.io.Serializable {
 	}
 	public void setOrders(Set<Orders> orders) {
 		this.orders = orders;
+	}
+	public CstCustomer() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 

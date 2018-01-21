@@ -6,6 +6,7 @@
 -->
 <hibernate-mapping>
     <class name="com.cp.entity.Storage" table="STORAGE">
+
         <id name="stkId" type="java.lang.Integer">
             <column name="STK_ID" precision="22" scale="0" />
             <generator class="native" />
@@ -26,7 +27,6 @@
         <property name="stkCount" type="java.lang.Integer">
             <column name="STK_COUNT" precision="22" scale="0" not-null="true" />
         </property>
-        
         <property name="stkMemo" type="java.lang.String">
             <column name="STK_MEMO" />
         </property>

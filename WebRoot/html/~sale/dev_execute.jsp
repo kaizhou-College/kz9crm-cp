@@ -65,20 +65,20 @@
 		<th>计划</th>
 		<th>执行效果</th>
 	</tr>
-		<s:iterator var="chancePlanList.salPlan" value="cpl">
-			<form action="salPlan_salPlanResult" method="post">
-					<input name="salChance.chcId" value="${chancePlanList.chcId}" type="hidden">
-					<input name="salplan.plaId" value="${cpl.plaId}" type="hidden">
-					<tr>
-						<td class="list_data_text"><s:property value="#cpl.plaDate"/></td>
-						<td class="list_data_ltext"><s:property value="#cpl.plaTodo"/></td>
-						<td class="list_data_ltext">
-							<input name="salplan.salPlanResult"  value="<s:property value='#cpl.plaResult'/>"/>
-							<input type="submit"  class="common_button"  value="保存"/>
-						</td>
-					</tr>
-			</form>
-		</s:iterator>
+	<s:iterator var="chancePlanList.salPlan" value="cpl">
+	<form action="salPlan_salPlanResult" method="post">
+			<input name="salChance.chcId" value="${chancePlanList.chcId}" type="hidden">
+			<input name="salplan.plaId" value="${cpl.plaId}" type="hidden">
+		<tr>
+			<td class="list_data_text"><s:property value="#cpl.plaDate"/></td>
+			<td class="list_data_ltext"><s:property value="#cpl.plaTodo"/></td>
+			<td class="list_data_ltext">
+				<input name="salplan.salPlanResult"  value="<s:property value='#cpl.plaResult'/>
+				<input type="submit"  class="common_button"  value="保存" >
+			</td>
+		</tr>
+		</form>
+	</s:iterator>
 	</table>
 </body>
 </html>

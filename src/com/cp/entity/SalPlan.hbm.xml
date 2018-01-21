@@ -11,19 +11,15 @@
             <column name="PLA_ID" precision="22" scale="0" />
             <generator class="native" />
         </id>
-        
         <property name="plaDate" type="java.util.Date">
             <column name="PLA_DATE" length="7" />
         </property>
-        
         <property name="plaTodo" type="java.lang.String">
             <column name="PLA_TODO" />
         </property>
-        
         <property name="plaResult" type="java.lang.String">
             <column name="PLA_RESULT" />
         </property>
-        
          <many-to-one name="salChance" column="PLA_CHC_ID" class="com.cp.entity.SalChance"></many-to-one>
     </class>
 </hibernate-mapping>

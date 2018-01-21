@@ -25,8 +25,8 @@
         <property name="odrStatus" type="java.lang.String">
             <column name="ODR_STATUS" length="1" not-null="true" />
 
-        </property><!--
-        <many-to-one name="cstCustomer" column="ODR_CUSTOMER" class="com.cp.entity.CstCustomer"></many-to-one> -->
-  </class>
+        </property>
+        <many-to-one name="cstCustomer" column="ODR_CUSTOMER" class="com.cp.entity.CstCustomer"></many-to-one>
+   </class>
 
 </hibernate-mapping>

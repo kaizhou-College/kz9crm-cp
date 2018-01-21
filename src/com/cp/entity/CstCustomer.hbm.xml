@@ -12,7 +12,7 @@
         </id>
         <property name="custName" type="java.lang.String">
             <column name="CUST_NAME"  />
-	</property>
+		</property>
         <property name="custRegion" type="java.lang.String">
             <column name="CUST_REGION" />
         </property>

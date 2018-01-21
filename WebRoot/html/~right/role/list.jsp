@@ -128,11 +128,9 @@
 								pageIndex="${listpage.pageIndex}"
 								pageSize="${listpage.pageSize}" pageMax="${listpage.pageMax}"
 								pageUrl="${listpage.pageUrl}"></comcp:queryByPage>
-						</div>
-					</th>
-				</tr>
-			</table>
-		</html:form>
+					</div>
+				</th>
+			</tr>
 	</body>
 </html>
 ${msg}

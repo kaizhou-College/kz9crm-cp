@@ -12,6 +12,7 @@
   
   <body>
     <div class="page_title">权限管理 > 角色管理 > 角色管理 > 查看角色</div>
+    <html:form action="/role" method="post">
     	<html:hidden property="o" value="toLookSysRole"/>
     	<div class="button_bar">
 	   		<button class="common_button" onclick="help('');">帮助</button>
@@ -46,5 +47,6 @@
 	   		</tr>
 	   		</s:iterator>
 	   	</table>
+    </html:form>
   </body>
 </html>

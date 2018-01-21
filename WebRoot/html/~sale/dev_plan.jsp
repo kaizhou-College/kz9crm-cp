@@ -7,7 +7,7 @@
 <link href="${basePath}/html/css/style.css" rel="stylesheet" type="text/css">
 <script src="${basePath}/html/script/common.js"></script>
 <script type="text/javascript" src="${basePath}/html/js/jquery-1.4.2.min.js"></script>
-<%--<script type="text/javascript">
+<script type="text/javascript">
 	function ajaxPlan(id){
 		$.ajax({
 		type:"POST",
@@ -19,7 +19,8 @@
 	});
 }
 </script>
---%></head>
+</head>
+
 <body>
 
 <div class="page_title">客户开发计划 &gt; 制定计划</div>
